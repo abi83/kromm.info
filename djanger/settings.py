@@ -25,7 +25,10 @@ SECRET_KEY = 'z_ao$#rp^uy9k=)wopcb@_c%=(pu)g*_s0$l@efc4elfb0a-0e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        '185.20.225.250',
+        'kromm.info',
+        ]
 
 
 # Application definition

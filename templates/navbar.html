@@ -1,10 +1,32 @@
+{% load i18n %}
 <header class="mb-auto">
-  <div>
-    <h3 class="float-md-start mb-0">Kromm Wladimir</h3>
-    <nav class="nav nav-masthead justify-content-center float-md-end">
-      <a class="nav-link active" aria-current="page" href="#">Home</a>
-      <a class="nav-link" href="#">Features</a>
-      <a class="nav-link" href="#">Contact</a>
-    </nav>
+  <div class="d-flex justify-content-between">
+  <h3 class="mb-0">Kromm Wladimir</h3>
+  <nav class="nav nav-masthead">
+    <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <a class="nav-link" href="#">Features</a>
+    <a class="nav-link" href="#">Contact</a>
+  </nav>
+  <div class="d-flex align-items-center">
+    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+      <input name="next" type="hidden" value="{{ redirect_to }}">
+      <div class="input-group">
+        <select class="form-control form-control-sm" name="language">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                selected{% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+            </option>
+          {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-secondary btn-sm">
+          Go
+        </button>
+      </div>
+    </form>
+  </div>
   </div>
 </header>

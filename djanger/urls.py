@@ -24,14 +24,14 @@ from cv.views import study_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.flatpage, {'url': '/'}, name='index'),
+    path('', views.flatpage, {'url': '/'}, name='index'),
     # path('', study_view, name='index'),
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(
     # path('/', include('django.contrib.flatpages.urls')),
-    path('', study_view, name='index'),
+    # path('', study_view, name='index'),
     path('cv/', include('cv.urls'))
     # path('contact/', include("contact.urls")),
     # path("", include("movies.urls")),

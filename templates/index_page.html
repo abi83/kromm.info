@@ -412,24 +412,29 @@
         </div>
 
         <div class="col-12">
-          <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <label for="email" class="form-label">Email <span class="text-muted">(Required)</span></label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
         </div>
 
         <div class="col-12">
-          <label for="address" class="form-label">Phone</label>
-          <input type="tel" class="form-control" id="address" placeholder="1234 Main St" required>
+          <label for="tel" class="form-label">Phone <span class="text-muted">(Required)</span></label>
+          <input type="tel" class="form-control" id="tel" placeholder="+49303982345" required>
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
         </div>
 
         <div class="col-12">
-          <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          <label for="address" class="form-label">Address<span class="text-muted">(Optional)</span></label>
+          <input type="text" class="form-control" id="address" placeholder="Apartment or suite">
+        </div>
+
+        <div class="col-12">
+        <label for="exampleTextarea">Example textarea</label>
+        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
         </div>
 
       </div>
@@ -439,13 +444,6 @@
     </form>
     </div>
   </div>
-
-  <hr class="featurette-divider">
-  <i class="fab fa-whatsapp-square fa-3x"></i>
-  <i class="fab fa-telegram-plane fa-3x"></i>
-  <i class="fab fa-linkedin fa-3x"></i>
-  <i class="fab fa-twitter-square fa-3x"></i>
-  <i class="fab fa-github-square fa-3x"></i>
 
   <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 

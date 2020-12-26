@@ -11,12 +11,22 @@ h2{
 /*margin-top: 0.75em;*/
 margin-bottom: 0.75em;
 }
-
+/*
 btn-lg:hover{
-  color: #FFF; /* Black */
+  color: #FFF;
   background: #333;
 
 }
+*/
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    /*color: #000; !important;*/
+    background-color: green; !important;
+    /*border-color: #285e8e; !important; /*set the color you want here*/
+}
+
+
+
 
 
 .carousel-control-prev-icon,

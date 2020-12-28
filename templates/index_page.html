@@ -3,7 +3,7 @@
 {% block content %}
 
   <!--banner-->
-<div class="jumbotron" xmlns="http://www.w3.org/1999/html">
+  <div class="jumbotron" xmlns="http://www.w3.org/1999/html">
     <h1 class="display-5">Backend разработчик, дата аналитик</h1>
     <p class="lead">
       У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером в рекламном агентстве, а теперь я
@@ -56,153 +56,136 @@
   </div>
   <hr class="featurette-divider">
 
-
   <!--  skils-->
-  <div class="container">
-     <h2 class="featurette-heading">Скилы</h2>
+  <div class="row">
+    <div class="container">
+       <h2 class="featurette-heading">Скилы</h2>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-        <div class="col">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+          <div class="col">
 
-            <div class="card border-success mb-3" style="max-width: 20rem;">
-              <div class="card-header">
-                <i class="far fa-file-code fa-3x" style="margin-bottom: 0.5em"></i></br>
-                <span>Языки программирования</span>
+              <div class="card border-success">
+                <div class="card-header">
+                  <i class="far fa-file-code fa-3x" style="margin-bottom: 0.5em"></i></br>
+                  <span>Языки программирования</span>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Python</h4>
+                  <p class="card-text">Django, REST, Flask</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">SQL</h4>
+                  <p class="card-text">MySQL, PostgreSQL, SQLite</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">HTML</h4>
+                  <p class="card-text">HTML5.0, CSS, Bootsrap</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">JavaScript</h4>
+                  <p class="card-text">React.js, Node.js</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+
+                  <hr>
+                </div>
               </div>
-              <div class="card-body">
-                <h4 class="card-title">Python</h4>
-                <p class="card-text">Django, REST, Flask</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">SQL</h4>
-                <p class="card-text">MySQL, PostgreSQL, SQLite</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">HTML</h4>
-                <p class="card-text">HTML5.0, CSS, Bootsrap</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">JavaScript</h4>
-                <p class="card-text">React.js, Node.js</p>
-                <div class="progress">
-                  <div class="progress-bar bg-warning" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
 
-                <hr>
+          </div>
+          <div class="col">
+
+              <div class="card border-success">
+                <div class="card-header">
+                  <i class="fas fa-tools fa-3x" style="margin-bottom: 0.5em"></i></br>
+                  <span>Инструменты</span>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Version Control</h4>
+                  <p class="card-text">Git, Bitbucket</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">Linux</h4>
+                  <p class="card-text">Nginx, uWSGI, Bash</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">Network</h4>
+                  <p class="card-text">TCP/IP, HTTP, UDP</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">Elasticsearch</h4>
+                  <p class="card-text">Index, Mapping, Query and filter</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+
+                  <hr>
+                </div>
               </div>
-            </div>
 
+          </div>
+          <div class="col">
+
+              <div class="card border-success">
+                <div class="card-header">
+                  <i class="fas fa-book-open fa-3x" style="margin-bottom: 0.5em"></i></br>
+                  <span>Библиотеки</span>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Test</h4>
+                  <p class="card-text">Unittest, Pytest</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">Parse data</h4>
+                  <p class="card-text">Requests, Beautifulsoup, Scrapy</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">Data analysis</h4>
+                  <p class="card-text">NumPy , Matplotlib , Pandas</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+  <!--                <hr>-->
+  <!--                <h4 class="card-title">Python</h4>-->
+  <!--                <p class="card-text">Django, REST, Flask</p>-->
+  <!--                <div class="progress">-->
+  <!--                  <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>-->
+  <!--                </div>-->
+
+                  <hr>
+                </div>
+              </div>
+
+          </div>
         </div>
-        <div class="col">
-
-            <div class="card border-success mb-3" style="max-width: 20rem;">
-              <div class="card-header">
-                <i class="fas fa-tools fa-3x" style="margin-bottom: 0.5em"></i></br>
-                <span>Инструменты</span>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Version Control</h4>
-                <p class="card-text">Git, Bitbucket</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">Linux</h4>
-                <p class="card-text">Nginx, uWSGI, Bash</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">Network</h4>
-                <p class="card-text">TCP/IP, HTTP, UDP</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">Elasticsearch</h4>
-                <p class="card-text">Index, Mapping, Query and filter</p>
-                <div class="progress">
-                  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-
-                <hr>
-              </div>
-            </div>
-
-        </div>
-        <div class="col">
-
-            <div class="card border-success mb-3" style="max-width: 20rem;">
-              <div class="card-header">
-                <i class="fas fa-book-open fa-3x" style="margin-bottom: 0.5em"></i></br>
-                <span>Библиотеки</span>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Test</h4>
-                <p class="card-text">Unittest, Pytest</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">Parse data</h4>
-                <p class="card-text">Requests, Beautifulsoup, Scrapy</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <hr>
-                <h4 class="card-title">Data analysis</h4>
-                <p class="card-text">NumPy , Matplotlib , Pandas</p>
-                <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-<!--                <hr>-->
-<!--                <h4 class="card-title">Python</h4>-->
-<!--                <p class="card-text">Django, REST, Flask</p>-->
-<!--                <div class="progress">-->
-<!--                  <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>-->
-<!--                </div>-->
-
-                <hr>
-              </div>
-            </div>
-
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
   </div>
   <hr class="featurette-divider">
 
   <!--  projects-->
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="container">
     <h2 class="featurette-heading">Мои проекты</h2>
-<!--    <ol class="carousel-indicators">-->
-<!--      <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>-->
-<!--      <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>-->
-<!--      <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>-->
-<!--    </ol>-->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="container">
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
             <div class="col">
               <div class="card shadow-sm">
@@ -211,8 +194,8 @@
                 </svg>
                 <div class="card-body">
                   <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                    This is a wider card1 with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                    This is a wider card1 with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                   </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
@@ -229,50 +212,7 @@
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
                 <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                  </p>
+                  <p class="card-text">This is a wider card2 with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -288,7 +228,7 @@
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
                 <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text">This is a wider card3 with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -298,93 +238,75 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
-              </div>
-            </div>
           </div>
           </div>
         </div>
-      </div>
 
-      <div class="carousel-item">
-                <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
-                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        <div class="carousel-item">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+              <div class="col">
+                <div class="card shadow-sm">
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                  </svg>
+                  <div class="card-body">
+                    <p class="card-text">
+                      This is a wider card4 with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
                     </div>
-                    <small class="text-muted">9 mins</small>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
-                <div class="card-body">
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card5 with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
                     </div>
-                    <small class="text-muted">9 mins</small>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              <div class="col">
+                <div class="card shadow-sm">
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card6 with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      </div>
+                      <small class="text-muted">9 mins</small>
+                    </div>
                   </div>
-                  <small class="text-muted">9 mins</small>
                 </div>
-              </div>
             </div>
-          </div>
-          </div>
+            </div>
         </div>
-      </div>
 
+      </div>
+      <a class="carousel-control-prev" style="left: -13%;" href="#myCarousel" role="button" data-bs-slide="prev">
+        <span style="color: green; font-size: xx-large; font-weight: bold;"><</span>
+      </a>
+      <a class="carousel-control-next" style="right: -13%;" href="#myCarousel" role="button" data-bs-slide="next">
+        <span style="color: green; font-size: xx-large; font-weight: bold;">></span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-      <span class="visually-hidden" style="color: green">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-      <span class="visually-hidden" style="color: green">Next</span>
-    </a>
   </div>
 
   <hr class="featurette-divider">

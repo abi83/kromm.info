@@ -1,5 +1,13 @@
+p{
+  font-size: 1.1rem;
+}
+
+.lead{
+  font-size: 1.4rem;
+}
+
 .jumbotron {
-  height: 80vh;
+  min-height: 80vh;
   background-image: url(/static/002.jpg);
   background-size: cover;
   background-position: center;
@@ -8,6 +16,7 @@
 }
 
 .overlay {
+  min-height: 80vh;
   padding: 10%;
   width: 100%;
   height: 100%;
@@ -21,3 +30,8 @@ margin-bottom: 30px;
 h2{
 margin-bottom: 0.75em;
 }
+/*
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    background-color: green; !important;
+}
+*/

@@ -22,7 +22,7 @@ from .forms import NewSiteForm
 def ads_maker(request):
     sites = Site.objects.all()
     form = NewSiteForm(request.POST or None)
-    paginator = Paginator(sites, 10)
+    paginator = Paginator(sites, 21)
     page_number = request.GET.get('page', default=1)
     sites = paginator.get_page(page_number)
     context = {

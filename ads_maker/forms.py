@@ -23,9 +23,9 @@ class NewSiteForm(forms.Form):
         max_length=30,
         min_length=5,
         label='Site URL',
-        help_text='Enter correct site URL',
+        help_text='Enter your homepage address',
         # required=True,
-        error_messages={'required': 'Please enter your name'},
+        # error_messages={'required': 'Please enter your name'},
         # validators=[url_validator(),],
         required=True,
     )

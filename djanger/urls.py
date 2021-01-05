@@ -19,7 +19,6 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.flatpages import views
 from django.urls import path, include
-from cv.views import study_view
 
 
 urlpatterns = [
@@ -36,6 +35,10 @@ urlpatterns += i18n_patterns(
     # path('contact/', include("contact.urls")),
     # path("", include("movies.urls")),
 )
+
+urlpatterns += [
+    path('ads_maker/', include('ads_maker.urls'))
+]
 
 if settings.DEBUG:
     import debug_toolbar

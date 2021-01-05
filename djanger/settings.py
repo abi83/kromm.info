@@ -41,7 +41,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'modeltranslation',
-    'cv',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +51,9 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
     'django.contrib.flatpages',
+
+    'cv',
+    'ads_maker',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Ads maker{% endblock %}
+{% block header %}Ads maker{% endblock %}
+{% block content %}
+
+
+  {% comment %}
+  <form method="post" class="form-group" enctype="multipart/form-data">
+      <p>Ad site</p>
+
+<!--    <fieldset>-->
+      <div class="form-group has-danger">
+          {{ form.non_field_errors }}
+
+<!--        <div class="fieldWrapper">-->
+          {% csrf_token %}
+          <div class="invalid-feedback"> Херня </div>
+          {{ form.url }}
+          <label for="{{ form.subject.id_for_label }}">{{ form.url.help_text }}</label>
+<!--        </div>-->
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+      </div>
+<!--    </fieldset>-->
+  </form>
+  {% endcomment %}
+
+<!--========================================================================-->
+<!--========================================================================-->
+<!--========================================================================-->
+  {% load user_filters %}
+  <form method="post" class="form-group" enctype="multipart/form-data">
+    <p>Receive GoogleAds file for your site</p>
+
+    {% csrf_token %}
+
+    <div class="form-group has-danger" aria-required="true">
+      <label for="{{ form.url.id_for_label }}" class="form-control-label">
+        {{ form.url.label }}
+        <span class="required">*</span>
+      </label>
+
+      {% if form.errors %}
+        {{ form.url|addclass:"form-control is-invalid" }}
+      {% elif messages %}
+        {{ form.url|addclass:"form-control is-valid" }}
+        {% for message in messages %}
+          <div class="valid-feedback">
+          {{ message.message }}
+          </div>
+        {% endfor %}
+      {% else %}
+        {{ form.url|addclass:"form-control" }}
+        <small id="{{ form.url.id_for_label }}-help" class="form-text text-muted">
+          {{ form.url.help_text|safe }}
+        </small>
+      {% endif %}
+
+      <div class="invalid-feedback">
+        {{ form.non_field_errors.as_text }}
+        {{ form.url.errors.as_text }}
+      </div>
+
+
+
+    </div>
+    <button type="submit" class="btn btn-primary btn-outline-success">
+      Try IT
+    </button>
+
+
+  </form>
+
+<!--========================================================================-->
+<!--========================================================================-->
+<!--========================================================================-->
+
+
+
+
+
+
+
+
+
+ <p>In our base we've already discovered some sites</p>
+  {% for site in sites %}
+    <h4>{{ forloop.counter }}. {{ site.url }}</h4>
+    <p>Status: {{ site.status }}</p>
+    <p>created: {{ site.created_at}}</p>
+    <p>updated: {{ site.updated_at}}</p>
+  {% endfor %}
+
+  {% if sites.has_other_pages %}
+    {% include "paginator.html" with items=sites paginator=paginator%}
+  {% endif %}
+
+{% endblock %}

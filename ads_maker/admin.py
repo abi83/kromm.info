@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Site, SiteMap
+from .models import WSite, SiteMap
 
 
 class SiteAdmin(admin.ModelAdmin):
@@ -14,5 +14,5 @@ class SiteMapAdmin(admin.ModelAdmin):
     list_filter = ("site",)
 
 
-admin.site.register(Site, SiteAdmin)
+admin.site.register(WSite, SiteAdmin)
 admin.site.register(SiteMap, SiteMapAdmin)

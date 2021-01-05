@@ -70,14 +70,14 @@
       <div class="col-lg">
 
 
-        <div class="card" style="margin: 1em">
+        <div class="card mb-3">
           <div class="card-body">
             <h5 class="card-title">{{ site.url }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Status: {{ site.status }}</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <p class="card-text">created: {{ site.created_at}}</p>
-            <p class="card-text">created: {{ site.created_at}}</p>
-            <a href="#" class="card-link">More</a>
+            <p class="card-text">{{ site.short_desc}}</p>
+            <p class="text-muted mb-0"><small>created: {{ site.created_at}}</small></p>
+            <p class="text-muted"><small>updated: {{ site.updated_at}}</small></p>
+            <a href="{% url 'site-detail' pk=site.pk %}" class="card-link">More</a>
           </div>
         </div>
 

@@ -7,7 +7,7 @@ from django.db import models
 import requests
 from requests.exceptions import ConnectionError
 from bs4 import BeautifulSoup
-from sitemapparser import SiteMapParser
+# from sitemapparser import SiteMapParser
 
 logger = logging.getLogger('kromm_info')
 

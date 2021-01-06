@@ -10,11 +10,11 @@ coverage                  # test coverage
 
 # for ads maker
 
-site-map-parser
-lxml==4.4.1
+# site-map-parser
+# lxml==4.4.1
 #pytest-cov==2.8.1
 #requests-mock==1.7.0
-python-dateutil==2.8.1
+# python-dateutil==2.8.1
 
 requests # requests!!!
 beautifulsoup4 # beautifulsoop

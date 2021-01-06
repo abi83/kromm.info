@@ -51,6 +51,7 @@ def ads_maker(request):
 
 class SiteDetail(DetailView, View):
     model = WSite
+    template_name = 'ads_maker/site_detail.html'
     # queryset = WSite.objects.select_related('sitemaps').all()
 
     def post(self, request, pk):
@@ -59,8 +60,8 @@ class SiteDetail(DetailView, View):
             self.object.check_info()
             self.object.save()
             context = self.get_context_data(object=self.object)
-            return render(request, 'ads_maker/wsite_detail.html', context)
+            return render(request, self.template_name, context)
         if 'parse-sitemaps' in request.POST:
             self.object.get_sitemaps()
             context = self.get_context_data(object=self.object)
-            return render(request, 'ads_maker/wsite_detail.html', context)
+            return render(request, self.template_name, context)

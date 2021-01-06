@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ object.url }} | Ads maker{% endblock %}
+{% block content %}
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="{% url 'index' %}#">Home</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'ads-maker-index' %}">Ads Maker</a></li>
+  <li class="breadcrumb-item active">{{ object.url }}</li>
+</ol>
+
+<div class="container">
+  <h1>{{ object.url }}</h1>
+  <h6 class="card-subtitle mb-2 text-muted">Status: {{ object.status }}</h6>
+  <p class="lead">{{ object.short_desc }}</p>
+  <p><small>Created: {{ object.created_at }}</small></p>
+  <p><small>Updated: {{ object.updated_at }}</small></p>
+
+  <form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary" name="parse-sitemaps">Get PAGES</button>
+  <button type="submit" class="btn btn-secondary" name="update">Get INFO</button>
+  </form>
+
+
+  <div class="row" style="margin-top: 4em">
+    <div class="col-lg-12">
+      <div class="page-header"> <h2>Sitemaps</h2> </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="page-header"> <h3>There are some sitemaps found in the Site</h3> </div>
+    </div>
+  </div>
+
+  <ul class="list-group mt-3">
+    <li class="list-group-item d-flex justify-content-between align-items-center active">
+      <div class="col-8 text-left">Sitemap</div>
+      <div class="col-2"><span class="badge badge-primary badge-pill bg-dark">Links</span></div>
+      <div class="col-2"><span class="badge badge-primary badge-pill bg-warning">Sitemaps</span></div>
+    </li>
+    {% for sitemap in object.sitemaps.all %}
+      <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+      <div class="col-8 text-left">{{ sitemap.url }}</div>
+      <div class="col-2"><span class="badge badge-primary badge-pill bg-dark">{{ sitemap.count_urls }}</span></div>
+      <div class="col-2"><span class="badge badge-primary badge-pill bg-warning">{{ sitemap.count_sitemaps }}</span></div>
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
+{% endblock %}

@@ -13,6 +13,10 @@ ALLOWED_HOSTS += [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+LOGGING['handlers']['file']['level'] = 'WARNING'
+LOGGING['handlers']['file']['filename'] = '/home/abi83/kromm.info/logging/log.log'
+
+
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #
 # EMAIL_HOST = 'smtp.yandex.ru'

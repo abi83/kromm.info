@@ -20,6 +20,7 @@ from .forms import NewSiteForm
 
 logger = logging.getLogger('kromm_info')
 
+
 def ads_maker(request):
     sites = WSite.objects.all()
     form = NewSiteForm(request.POST or None)
@@ -38,8 +39,14 @@ def ads_maker(request):
     site.url = form.cleaned_data['url']
     site.check_status()
     if site.status == 200:
+        try:
+            site = WSite.objects.get(url=site.url)
+            messages.success(request, 'Your website updated successfully')
+        except WSite.DoesNotExist:
+            site = WSite(url=site.url, status=site.status)
+            messages.success(request, 'Your website added successfully')
         site.save()
-        messages.success(request, 'Your website added successfully')
+        logger.info(f'Site {site.url} proceed successfully')
         sites = WSite.objects.all()
         paginator = Paginator(sites, 10)
         context['sites'] = paginator.get_page(1)
@@ -52,7 +59,6 @@ def ads_maker(request):
 class SiteDetail(DetailView, View):
     model = WSite
     template_name = 'ads_maker/site_detail.html'
-    # queryset = WSite.objects.select_related('sitemaps').all()
 
     def post(self, request, pk):
         self.object = self.get_object()
@@ -62,6 +68,6 @@ class SiteDetail(DetailView, View):
             context = self.get_context_data(object=self.object)
             return render(request, self.template_name, context)
         if 'parse-sitemaps' in request.POST:
-            self.object.get_sitemaps()
+            self.object.get_sitemaps(request)
             context = self.get_context_data(object=self.object)
             return render(request, self.template_name, context)

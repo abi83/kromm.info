@@ -4,6 +4,8 @@ import logging
 import re
 
 from django.db import models
+from django.contrib import messages
+
 import requests
 from requests.exceptions import ConnectionError
 from bs4 import BeautifulSoup
@@ -27,25 +29,21 @@ class WSite(models.Model):
         """
         Populates status field and handles possible url mistakes
         """
-        if not str(self.url).startswith('http://')\
-                and not str(self.url).startswith('https://'):
-            self.url = 'http://' + self.url
         try:
-            r = requests.head(str(self.url), headers=self.HEADERS,
-                              allow_redirects=True)
-        except ConnectionError:
+            resp = requests.head(str(self.url), headers=self.HEADERS, allow_redirects=True)
+        except ConnectionError as error:
+            logger.error(f'Could not connect to {self.url}. Error: {error}')
             self.status = 'xxx'
             return
-        self.status = r.status_code
-        if r.history:
-            # if redirects: save final URL
-            self.url = r.url
+        self.status = resp.status_code
+        self.url = resp.url  # if redirects: save the final URL
 
     def check_info(self):
         r = requests.get(str(self.url), headers=self.HEADERS,
                          allow_redirects=False)
         soup = BeautifulSoup(r.content, 'html.parser')
         self.short_desc = soup.title.string
+        self.status = r.status_code
 
     def find_sitemaps_in_robots(self):
         r = requests.get(self.url + 'robots.txt')
@@ -53,7 +51,7 @@ class WSite(models.Model):
             sitemaps_position = [m.start() for m in re.finditer('\sSitemap:', r.text)]
             for position in sitemaps_position:
                 sitemap_url = r.text[position+10:].split('\n', 1)[0].strip()
-                logger.debug(f'Found sitemap: {sitemap_url}')
+                logger.debug(f'Found sitemap in robots.txt: {sitemap_url}')
                 yield sitemap_url
         else:
             return []
@@ -62,34 +60,42 @@ class WSite(models.Model):
         """
         Add default sitemap path to found in robots.txt if was not found
         """
-        # return set(list(self.find_sitemaps_in_robots()) + [self.url + 'sitemap.xml'])
-        return self.find_sitemaps_in_robots()
+        answer = list(self.find_sitemaps_in_robots())
+        answer.append(self.url + 'sitemap.xml')
+        answer.append(self.url + 'sitemap_index.xml')
+        answer.append(self.url + 'sitemap1.xml')
+        return answer
 
-        # r = requests.get(self.url + 'sitemap.xml',
-        #                  headers=self.HEADERS, allow_redirects=False)
-        # if r.ok:
-        #     soup = BeautifulSoup(r.content, 'xml')
-        #     for sitemap in soup.find_all('sitemap'):
-        #         yield sitemap.find('loc').text
-        # else:
-        #     return [self.url + 'sitemap.xml']
-
-    def get_sitemaps(self):
+    def get_sitemaps(self, request):
+        # TODO: Рекурсивно оббегать все сайтмэпы
         logger.info(f'Parse sitemaps started at {self.url}')
+        count = 0
         for page in self.find_sitemaps():
-            r = requests.get(page, headers=self.HEADERS, allow_redirects=False)
+            r = requests.get(page, headers=self.HEADERS, allow_redirects=True)
+            logger.debug(f'Trying to parse {page}. Response code: {r.status_code}.')
             if r.ok:
                 soup = BeautifulSoup(r.content, 'xml')
                 count_urls = len(soup.find_all('url'))
                 count_sitemaps = len(soup.find_all('sitemap'))
-                self.sitemaps.create(url=page,
-                                     is_sm_index=count_sitemaps > count_urls,
-                                     count_urls=count_urls,
-                                     count_sitemaps=count_sitemaps,
-                                     )
-                logger.debug(f'Parsed sitemap: {page}')
+                try:
+                    sitemap = SiteMap.objects.get(url=r.url)
+                    sitemap.save()
+                    logger.debug(f'Successfully updated sitemap: {r.url}')
+                except SiteMap.DoesNotExist:
+                    self.sitemaps.create(url=r.url,
+                                         is_sm_index=count_sitemaps > count_urls,
+                                         count_urls=count_urls,
+                                         count_sitemaps=count_sitemaps,
+                                         )
+                    logger.debug(f'Successfully created sitemap: {page}')
+                count += 1
             else:
                 logger.warning(f'Parse sitemap {page} failed. Status {r.status_code}')
+        if count > 0:
+            messages.success(request, f'Successfully proceeded {count} sitemaps')
+        else:
+            messages.warning(request, 'No sitemaps was found')
+
 
 
     def __str__(self):

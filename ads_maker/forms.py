@@ -17,6 +17,9 @@ class NewSiteForm(forms.Form):
                 raise ValidationError('It is not an URL')
         if not have_point:
             raise ValidationError('It is not an URL')
+        if not cleaned_data.startswith('http://')\
+                and not cleaned_data.startswith('https://'):
+            cleaned_data = 'http://' + cleaned_data
         return cleaned_data
 
     url = forms.CharField(

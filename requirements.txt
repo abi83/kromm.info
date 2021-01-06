@@ -14,3 +14,4 @@ psycopg2-binary           # database engine
 # 4 ads_maker
 requests                  # requests
 beautifulsoup4            # beautifulsoup
+lxml                      # via beautifulsoup

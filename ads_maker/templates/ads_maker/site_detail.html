@@ -11,7 +11,15 @@
 <div class="container">
   <h1>{{ object.url }}</h1>
   <h6 class="card-subtitle mb-2 text-muted">Status: {{ object.status }}</h6>
+
+
+  {% if object.short_desc %}
   <p class="lead">{{ object.short_desc }}</p>
+  {% else %}
+  <p class="lead text-warning">This site was not scaned yet</p>
+  {% endif %}
+
+
   <p><small>Created: {{ object.created_at }}</small></p>
   <p><small>Updated: {{ object.updated_at }}</small></p>
 

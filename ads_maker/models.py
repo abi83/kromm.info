@@ -15,8 +15,7 @@ logger = logging.getLogger('kromm_info')
 class WSite(models.Model):
     url = models.URLField(unique=True, null=False)
     status = models.CharField(max_length=3, null=False, default='xxx')
-    short_desc = models.TextField(max_length=1023, verbose_name='Some Description', default='This site was not scaned yet')
-    # TODO: remove default fucking shit. Populate it with red in template
+    short_desc = models.TextField(max_length=1023, verbose_name='Some Description')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     HEADERS = {'user-agent': 'ads_maker 0.1'}

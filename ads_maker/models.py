@@ -56,6 +56,13 @@ class WSite(models.Model):
         else:
             return []
 
+    def is_homepage(self):
+        """
+        HTTP://WWW.AC54.RU/UDALENIE-ZAPAHOV
+        We should search something after a slash after the last point.
+        """
+        return True
+
     def find_sitemaps(self):
         """
         Add default sitemap path to found in robots.txt if was not found
@@ -64,7 +71,7 @@ class WSite(models.Model):
         answer.append(self.url + 'sitemap.xml')
         answer.append(self.url + 'sitemap_index.xml')
         answer.append(self.url + 'sitemap1.xml')
-        return answer
+        return set(answer)
 
     def get_sitemaps(self, request):
         # TODO: Рекурсивно оббегать все сайтмэпы

@@ -1,6 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 import logging
+import re
 
 
 from .models import WSite
@@ -10,18 +11,20 @@ logger = logging.getLogger('kromm_info')
 
 class NewSiteForm(forms.Form):
     def clean_url(self):
-        have_point = False
+        """
+
+        """
+        homepage_url_pattern = R'^(https?:\/\/)?(www)?\.?(\w+\.)+\w+\/?$'
+        web_url_pattern = R'^(https?:\/\/)?(www)?\.?(\w+\.)+\w+\/?'
         cleaned_data = self.cleaned_data['url'].lower()
-        accepted = string.ascii_lowercase + '.:/-' + string.digits
-        # TODO: it must be a regex
-        for letter in cleaned_data:
-            have_point = have_point or letter == '.'
-            if letter not in accepted:
-                logger.warning(f'Wrong symbols {letter} in {cleaned_data}')
-                raise ValidationError('It is not an URL')
-        if not have_point:
-            logger.warning(f'No point in {cleaned_data}')
+        url_match = re.match(web_url_pattern, cleaned_data)
+        homepage_match = re.match(homepage_url_pattern, cleaned_data)
+        if not url_match:
+            logger.warning(f'No match to url in {cleaned_data}')
             raise ValidationError('It is not an URL')
+        if not homepage_match:
+            logger.warning(f'Not a homepage: {cleaned_data}')
+            raise ValidationError('It is not a Homepage')
         if not cleaned_data.startswith('http://')\
                 and not cleaned_data.startswith('https://'):
             cleaned_data = 'http://' + cleaned_data

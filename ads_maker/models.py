@@ -27,10 +27,10 @@ class WSite(models.Model):
 
     def check_status(self):
         """
-        Populates status field and handles possible url mistakes
+        Populates 'status' field except connection error
         """
         try:
-            resp = requests.head(str(self.url), headers=self.HEADERS, allow_redirects=True)
+            resp = requests.head(self.url, headers=self.HEADERS, allow_redirects=True)
         except ConnectionError as error:
             logger.error(f'Could not connect to {self.url}. Error: {error}')
             self.status = 'xxx'

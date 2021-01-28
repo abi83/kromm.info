@@ -4,7 +4,7 @@ import logging
 import re
 
 
-from .models import WSite
+# from ads_maker.models import WSite
 import string
 logger = logging.getLogger('kromm_info')
 

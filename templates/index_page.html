@@ -317,9 +317,17 @@
     </div>
   </div>
 
+{% for project in projects %}
+    <li>{{ project.title }}</li>
+{% empty %}
+    <li>No projects yet.</li>
+{% endfor %}
+
+
+
   <hr class="featurette-divider">
 
-  <!--contacts-->
+  <!--contact-form-->
   <a name="contact-form"></a>
   <div class="container">
    <h2 class="featurette-heading">Контакты</h2>
@@ -375,6 +383,11 @@
     </form>
     </div>
   </div>
+
+
+
+
+
 
   <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 

@@ -193,3 +193,5 @@ LOGGING = {
         }
     },
 }
+
+DEFAULT_FROM_EMAIL = 'admin@kromm.info'

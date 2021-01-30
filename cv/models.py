@@ -2,7 +2,9 @@ from django.db import models
 
 
 class Study(models.Model):
-    """Учеба"""
+    """
+    Universities etc.
+    """
     name = models.CharField("Учеба", max_length=150)
 
     class Meta:

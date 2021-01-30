@@ -13,22 +13,23 @@
           <a class="btn btn-secondary" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-secondary" href="#">Link</a>
+          <a class="btn btn-secondary" href="#contacts">Контакты</a>
         </li>
         <li class="nav-item dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Приложения
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="{% url 'ads-maker-index' %}">Ads maker</a>
+<!--            <a class="dropdown-item" href="#">Another action</a>-->
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">CV maker</a>
           </div>
         </li>
       </ul>
     </div>
 
+    <!--Language change form -->
     <div class="d-flex align-items-center" style="margin: 5px;">
       <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
         <input name="next" type="hidden" value="{{ redirect_to }}">

@@ -38,6 +38,7 @@ def ads_maker(request):
     site = WSite()
     site.url = form.cleaned_data['url']
     site.check_status()
+
     if site.status == 200:
         try:
             site = WSite.objects.get(url=site.url)
@@ -50,9 +51,9 @@ def ads_maker(request):
         sites = WSite.objects.all()
         paginator = Paginator(sites, 10)
         context['sites'] = paginator.get_page(1)
-
     else:
         form.add_error(None, 'Connection error')
+
     return render(request, 'ads_maker/index.html', context)
 
 

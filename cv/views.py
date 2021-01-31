@@ -1,8 +1,11 @@
 from django.core.mail import EmailMessage
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Study, Project
 from .forms import ContactForm
+from django.utils.translation import ugettext_lazy as _
+
 
 
 def study_view(request):
@@ -23,17 +26,29 @@ class ProjectList(ListView):
 
     def post(self, request):
         form = ContactForm(request.POST)
-        breakpoint()
         if not form.is_valid():
-            # return render(request, 'index_page.html', self.get_context_data())
-            return redirect('index')
+            messages.warning(
+                request,
+                _('Сообщение не было отправлено. В <a href="#contact-form"'
+                  'class="alert-link">форме</a> есть ошибки.'),
+                extra_tags='alert-warning'
+            )
+            return render(request, 'index_page.html', {
+                    'projects': Project.objects.all(),
+                    'form': form,
+                })
         email = EmailMessage(
             subject='New message from ContactForm',
             body=f'Form data {form.data}',
             to=['vladimir@kromm.info', ],
         )
         email.send()
+        messages.success(
+            request, 'Your message was sent', extra_tags='alert-success')
 
-        return redirect('index')
+        return render(request, 'index_page.html', {
+            'projects': Project.objects.all(),
+            'form': form,
+        })
 
 

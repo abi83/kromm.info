@@ -7,7 +7,6 @@ import logging
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, View
@@ -42,10 +41,10 @@ def ads_maker(request):
     if site.status == 200:
         try:
             site = WSite.objects.get(url=site.url)
-            messages.success(request, 'Your website updated successfully')
+            messages.success(request, 'Your website updated successfully', extra_tags='alert-success')
         except WSite.DoesNotExist:
             site = WSite(url=site.url, status=site.status)
-            messages.success(request, 'Your website added successfully')
+            messages.success(request, 'Your website added successfully', extra_tags='alert-success')
         site.save()
         logger.info(f'Site {site.url} proceed successfully')
         sites = WSite.objects.all()

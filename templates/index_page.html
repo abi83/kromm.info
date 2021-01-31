@@ -4,7 +4,6 @@
 
 <!--!!https://getbootstrap.com/docs/5.0/examples/album/!!!-->
 
-
   <!--banner-->
   <div class="jumbotron" style="margin: 0 -1em" xmlns="http://www.w3.org/1999/html">
     <div class="overlay">
@@ -333,61 +332,8 @@
    <h2 class="featurette-heading">Контакты</h2>
     <div class="row">
 
-<!--      <form method="post" class="needs-validation" enctype="multipart/form-data">-->
-<!--      {% csrf_token %}-->
-<!--      <div class="row">-->
-
-<!--        <div class="col-sm-6">-->
-<!--          <label for="firstName" class="form-label">Имя</label>-->
-<!--          <input type="text" class="form-control" id="firstName" placeholder="" value="" required>-->
-<!--          <div class="invalid-feedback">-->
-<!--            Valid first name is required.-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="col-sm-6">-->
-<!--          <label for="lastName" class="form-label">Фамилия</label>-->
-<!--          <input type="text" class="form-control" id="lastName" placeholder="" value="" required>-->
-<!--          <div class="invalid-feedback">-->
-<!--            Valid last name is required.-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="col-12">-->
-<!--          <label for="email" class="form-label">Email <span class="text-muted">(Обязательно)</span></label>-->
-<!--          <input type="email" class="form-control" id="email" placeholder="you@example.com" required>-->
-<!--          <div class="invalid-feedback">-->
-<!--            Please enter a valid email address.-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="col-12">-->
-<!--          <label for="tel" class="form-label">Телефон <span class="text-muted">(Обязательно)</span></label>-->
-<!--          <input type="tel" class="form-control" id="tel" placeholder="+49303123456" required>-->
-<!--          <div class="invalid-feedback">-->
-<!--            Please enter a valid phone number.-->
-<!--          </div>-->
-<!--        </div>-->
-
-<!--        <div class="col-12">-->
-<!--          <label for="address" class="form-label">Адрес</label>-->
-<!--          <input type="text" class="form-control" id="address" placeholder="Apartment or suite">-->
-<!--        </div>-->
-
-<!--        <div class="col-12">-->
-<!--          <label for="exampleTextarea">Сообщение</label>-->
-<!--          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--      <button class="btn btn-primary btn-lg btn-outline-success" type="submit" style="margin-top: 40px">-->
-<!--        Отправить-->
-<!--      </button>-->
-<!--      </form>-->
-
-
-
       {% load user_filters %}
+
       <form method="post" class="needs-validation" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="row">
@@ -429,7 +375,14 @@
                 <span class="required">*</span>
               {% endif %}
             </label>
-            {{ form.phone|addclass:"form-control" }}
+            {% if form.phone.errors %}
+              {{ form.phone|addclass:"form-control is-invalid" }}
+            {% else %}
+              {{ form.phone|addclass:"form-control" }}
+            {% endif %}
+            <div class="invalid-feedback">
+              {{ form.phone.errors.as_text }}
+            </div>
           </div>
 
           <div class="form-group col-12">
@@ -458,12 +411,6 @@
       </button>
       </form>
 
-<!--      <div class="row">-->
-<!--        <div class="form-group">-->
-<!--          <p>form variable</p>-->
-<!--          {{ form }}-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
   </div>
 

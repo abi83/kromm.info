@@ -15,7 +15,7 @@ class NewSiteForm(forms.Form):
 
         """
         homepage_url_pattern = R'^(https?:\/\/)?(www)?\.?(\w+\.)+\w+\/?$'
-        web_url_pattern = R'^(https?:\/\/)?(www)?\.?(\w+\.)+\w+\/?'
+        web_url_pattern = R'^(https?:\/\/)?(www)?\.?(\w+|\-\.)+\w+\/?'
         cleaned_data = self.cleaned_data['url'].lower()
         url_match = re.match(web_url_pattern, cleaned_data)
         homepage_match = re.match(homepage_url_pattern, cleaned_data)

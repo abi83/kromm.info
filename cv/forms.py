@@ -1,17 +1,15 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
-
-
+import re
 
 
 class ContactForm(forms.Form):
     def clean_phone(self):
-        # TODO: make a phone validation via regex
+        pattern = R'^\+*\d{7,12}'
         phone = self.cleaned_data.get('phone')
-        for simbol in phone:
-            if simbol not in '0123456789+':
-                raise ValidationError('It is not a phone')
+        if not re.match(pattern, phone):
+            raise ValidationError(_('Введите телефон от 7 до 12 цифр, может начинаться с +'))
         return phone
 
     first_name = forms.CharField(

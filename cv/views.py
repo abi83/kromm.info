@@ -13,6 +13,9 @@ def study_view(request):
     return render(request, 'index.html', {'uni': nsu})
 
 
+def price_view(request):
+    return render(request, 'prices.html', {})
+
 class ProjectList(ListView):
 
     model = Project

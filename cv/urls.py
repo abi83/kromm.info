@@ -5,5 +5,8 @@ from . import views
 urlpatterns = [
     path('',
          views.ProjectList.as_view(),
-         name='index')
+         name='index'),
+    path('price/',
+         views.price_view,
+         name='price')
 ]

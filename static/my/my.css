@@ -6,13 +6,13 @@ p{
   font-size: 1.4rem;
 }
 
+/* index page banner  */
 .jumbotron {
   min-height: 80vh;
   background-image: url(/static/002.jpg);
   background-size: cover;
   background-position: center;
   padding: 20px;
-
 }
 
 .overlay {
@@ -35,7 +35,7 @@ margin-bottom: 0.75em;
 
 /*  Carousel with several items
     code by Iatek LLC 2018 - CC 2.0 License - Attribution required
-    code customized by Azmind.com
+    code customized by azmind.com
 */
 @media (min-width: 768px) and (max-width: 991px) {
     /* Show 4th slide on md if col-md-4*/

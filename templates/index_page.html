@@ -336,6 +336,14 @@
 
 
 
+
+
+
+
+  <div class="container">
+    <h2 class="featurette-heading">Мои проекты</h2>
+
+
   <!-- projects carousel v.2 -->
   <div class="top-content">
       <div class="container-fluid">
@@ -379,7 +387,7 @@
       </div>
   </div>
 
-
+  </div>
 
 
   <hr class="featurette-divider">
@@ -424,6 +432,9 @@
               {% endif %}
             </label>
             {{ form.email|addclass:"form-control" }}
+            <small id="{{ form.last_name.id_for_label }}-help" class="form-text text-muted">
+              {{ form.email.help_text|safe }}
+            </small>
           </div>
 
           <div class="form-group col-12">
@@ -438,6 +449,10 @@
             {% else %}
               {{ form.phone|addclass:"form-control" }}
             {% endif %}
+            <small id="{{ form.phone.id_for_label }}-help" class="form-text text-muted">
+              {{ form.phone.help_text|safe }}
+            </small>
+
             <div class="invalid-feedback">
               {{ form.phone.errors.as_text }}
             </div>

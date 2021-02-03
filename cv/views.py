@@ -51,7 +51,7 @@ class ProjectList(ListView):
 
         return render(request, 'index_page.html', {
             'projects': Project.objects.all(),
-            'form': form,
+            'form': ContactForm(),
         })
 
 

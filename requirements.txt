@@ -4,8 +4,8 @@ sqlparse==0.4.1           # via django
 
 django-modeltranslation
 
-# sorl-thumbnail==12.6.3    # images
-pillow                      # images
+sorl-thumbnail            # images
+pillow                    # images
 
 django-environ            #.env file manager
 

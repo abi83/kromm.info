@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
 
+    'sorl.thumbnail',
+
     'cv',
     'ads_maker',
 ]

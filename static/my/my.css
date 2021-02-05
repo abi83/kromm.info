@@ -175,3 +175,9 @@ right: 10%;
 top: 5%;
 z-index: 1;
 }
+
+/* index_page projects cards*/
+.sh:hover{
+  transition:.5s;
+  box-shadow: 10px 10px 5px #888888;
+}

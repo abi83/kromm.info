@@ -7,7 +7,6 @@ from .forms import ContactForm
 from django.utils.translation import ugettext_lazy as _
 
 
-
 def study_view(request):
     nsu = Study.objects.get(pk=1)
     return render(request, 'index.html', {'uni': nsu})
@@ -55,3 +54,7 @@ class ProjectList(ListView):
         })
 
 
+class ProjecDetail(DetailView):
+    model = Project
+    template_name = 'cv/project.html'
+    context_object_name = 'project'

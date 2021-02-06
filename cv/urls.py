@@ -8,5 +8,9 @@ urlpatterns = [
          name='index'),
     path('price/',
          views.price_view,
-         name='price')
+         name='price'),
+    path('<int:pk>/',
+         views.ProjecDetail.as_view(),
+         name='project-detail')
+
 ]

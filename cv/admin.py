@@ -18,5 +18,5 @@ class ProjectImageAdmin(admin.StackedInline):
 
 @admin.register(Project)
 class ProjectAdmin(TabbedTranslationAdmin):
-    list_display = ('title', 'short_desc', 'start_time', 'end_time')
+    list_display = ('title', 'short_desc', 'start_date', 'end_date')
     inlines = [ProjectImageAdmin, ]

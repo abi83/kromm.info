@@ -22,8 +22,8 @@ class Project(models.Model):
     title = models.CharField('Projects title', max_length=255)
     short_desc = models.TextField()
     description = models.TextField()
-    start_time = models.DateField()
-    end_time = models.DateField()
+    start_date = models.DateField()
+    end_date = models.DateField()
 
 
 class ProjectImage(models.Model):

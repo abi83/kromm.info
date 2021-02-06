@@ -22,7 +22,7 @@
   <hr class="featurette-divider">
 
   <!--personal-->
-  <div class="row featurette">
+  <div class="row">
     <div class="col-md-7">
       <h2 class="">Мне 38 лет. И я живу в Берлине</h2>
       <h3 class="text-muted">
@@ -44,7 +44,7 @@
             <h5 class="mb-1">Результат - важен. Остальное вторично.</h5>
             </div>
             <p class="mb-auto text-justify">
-              Чистый код, покрытие тестами и подробное проектирование - важны. Но экономический
+              Чистый код, покрытие тестами и детальное проектирование - важны. Но экономический
               результат - важнее. Приложение, работающее с ошибками - лучше, чем хорошо
               задументированный и покрытый тестами прототип.
             </p>
@@ -54,8 +54,9 @@
             <h5 class="mb-1">Программист это не про код, а про смыслы.</h5>
             </div>
             <p class="mb-auto text-justify">
-              Как проект монетизируется, показатели конверсии и дохода на одного пользователя
-              - вокруг этого должна строиться разработка. А нужные библиотеки подключим быстро.
+              Показатели монетизации, конверсии и дохода на одного пользователя - вокруг этого должна
+              строиться разработка. Не следовать мыслям пользователя, а опережать их. А нужные библиотеки
+              подключим быстро.
             </p>
           </div>
         </div>
@@ -185,9 +186,10 @@
   </div>
   <hr class="featurette-divider">
 
-  <!-- scripts for custom slider-->
+  <!-- scripts and styles for custom slider-->
   <script src="/static/my/wow.min.js"></script>
   <script src="/static/my/scripts.js"></script>
+  <link rel="stylesheet" href="{% static 'my/custom-multi-items-carousel.css' %}">
 
   <h2 class="featurette-heading">Мои проекты</h2>
   {% load thumbnail %}
@@ -199,7 +201,7 @@
         <div class="carousel-inner row w-100 mx-auto" role="listbox" >
           {% for project in projects %}
 
-            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3{% if forloop.first %} active{% endif %}">
+            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 {% if forloop.first %}active{% endif %}">
               <div class="card shadow-sm" style="min-height: 45em;">
                 {% thumbnail project.images.first.file "250x250" crop="center" as im %}
                 <a href="">

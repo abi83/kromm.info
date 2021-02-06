@@ -24,6 +24,8 @@ class Project(models.Model):
     description = models.TextField()
     start_date = models.DateField()
     end_date = models.DateField()
+    role = models.CharField(max_length=125, null=True)
+    url = models.URLField(null=True)
 
 
 class ProjectImage(models.Model):
@@ -33,3 +35,6 @@ class ProjectImage(models.Model):
     project = models.ForeignKey(Project, blank=False, null=False, on_delete=models.CASCADE, related_name='images', verbose_name='Link to project by ID')
     file = ImageField(upload_to='project_images/', blank=False, null=False, verbose_name='Image file link')
     cover = models.BooleanField(default=False)
+
+# TODO: project image title or descripton
+# TODO: projects metadata. Like role, url,

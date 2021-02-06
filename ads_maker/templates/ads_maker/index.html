@@ -51,10 +51,6 @@
     </div>
   </div>
 
-
-
-
-
   {% comment %}
   {% for site in sites %}
     <h4>{{ forloop.counter }}. {{ site.url }}</h4>
@@ -64,29 +60,29 @@
   {% endfor %}
   {% endcomment %}
 
-{% for site in sites %}
-    {% if forloop.first %}<div class="row">{% endif %}
+  {% for site in sites %}
+      {% if forloop.first %}<div class="row">{% endif %}
 
-      <div class="col-lg">
+        <div class="col-lg">
 
 
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">{{ site.url }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Status: {{ site.status }}</h6>
-            <p class="card-text">{{ site.short_desc}}</p>
-            <p class="text-muted mb-0"><small>created: {{ site.created_at}}</small></p>
-            <p class="text-muted"><small>updated: {{ site.updated_at}}</small></p>
-            <a href="{% url 'site-detail' pk=site.pk %}" class="card-link">More</a>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{ site.url }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Status: {{ site.status }}</h6>
+              <p class="card-text">{{ site.short_desc}}</p>
+              <p class="text-muted mb-0"><small>created: {{ site.created_at}}</small></p>
+              <p class="text-muted"><small>updated: {{ site.updated_at}}</small></p>
+              <a href="{% url 'site-detail' pk=site.pk %}" class="card-link">More</a>
+            </div>
           </div>
+
+
         </div>
 
-
-      </div>
-
-    {% if forloop.counter|divisibleby:2 %}</div><div class="row">{% endif %}
-    {% if forloop.last %}</div>{% endif %}
-{% endfor %}
+      {% if forloop.counter|divisibleby:2 %}</div><div class="row">{% endif %}
+      {% if forloop.last %}</div>{% endif %}
+  {% endfor %}
 
 
 

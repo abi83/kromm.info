@@ -4,69 +4,78 @@
 
 {% block content %}
 
+  <div class="container">
 
-<body>
+    <h1 class="project-title">{{ project.title }}</h1>
 
-  <main id="main">
+    <div class="row">
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+      <div class="col-lg-8">
 
-        <div class="row">
+        <div id="proj-img-carousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            {% for image in project.images.all %}
 
-          <div class="col-lg-8">
-            <h2 class="portfolio-title">This is an example of portfolio detail</h2>
-            <div class="owl-carousel portfolio-details-carousel">
+              <li data-target="#proj-img-carousel" data-slide-to="{{ forloop.counter0	 }}" {% if forloop.first %}class="active"{% endif %}></li>
+
+            {% endfor %}
+
+          </ol>
+          <div class="carousel-inner">
+
               {% for image in project.images.all %}
-                {% thumbnail image.file "400x400" crop="center" as im %}
-                <img src="{{ im.url }}" class="img-fluid" alt="">
-                {% endthumbnail %}
+
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                  {% thumbnail image.file "700x500" crop="center" as im %}
+                  <img src="{{ im.url }}" class="d-block w-100 shadow-sm" title="{{ forloop.counter }}">
+                  {% endthumbnail %}
+                  <div class="carousel-caption d-none d-md-block">
+                  <h5>Заголовочек</h5>
+                  <p>Описание</p>
+                  </div>
+                </div>
+
               {% endfor %}
-            </div>
+
           </div>
-
-          <div class="col-lg-4 portfolio-info">
-            <h3>Project information</h3>
-            <ul>
-              <li><strong>Category</strong>: Web design</li>
-              <li><strong>Client</strong>: ASU Company</li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-            </ul>
-
-            <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            </p>
-          </div>
-
         </div>
 
       </div>
-    </section><!-- End Portfolio Details Section -->
 
-  </main><!-- End #main -->
+      <div class="col-lg-4 text-justify">
+        <h3>Project information</h3>
+        {% if project.role %}
+          <p class="mb-auto text-justify"><strong>Роль</strong>: {{ project.role }} </p>
+        {% endif %}
+        <p class="mb-auto text-justify"><strong>Период</strong>: {{ project.start_date|date:"M Y" }} - {{ project.end_date|date:"M Y" }}</p>
+        {% if project.url %}
+        <p class="mb-auto text-justify"><strong>Ссылка</strong>: <a href="{{ project.url }}">{{ project.url }}</a></p>
+        {% endif %}
+        <p class="mb-auto text-justify"><strong>Технологии</strong>: </p>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+        <p class="my-2 text-justify">
+          {{ project.short_desc }}
+        </p>
+      </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-<!--  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+    </div>
+    <div class="row">
+      <p class="my-4 text-justify"> {{ project.description }} </p>
+    </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <div class="row">
 
-  <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
-</body>
+      <nav aria-label="Переключение страниц">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link btn-outline-secondary" href="{% url 'project-detail' pk=previous.pk %}">&laquo; Предыдущий</a></li>
+          <li class="page-item"><a class="page-link btn-outline-secondary" href="{% url 'project-detail' pk=next.pk %}">Следующий &raquo;</a></li>
+        </ul>
+      </nav>
 
+    </div>
+
+
+
+  </div>
 
 {% endblock %}

@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
         Background
     */
     $('.section-4-container').backstretch("assets/img/backgrounds/bg.jpg");
-    
+
     /*
 	    Wow
 	*/

@@ -31,12 +31,11 @@ h2{
 margin-bottom: 0.75em;
 }
 
-
-
 /*  Carousel with several items
     code by Iatek LLC 2018 - CC 2.0 License - Attribution required
     code customized by azmind.com
 */
+
 @media (min-width: 768px) and (max-width: 991px) {
     /* Show 4th slide on md if col-md-4*/
     .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
@@ -169,10 +168,8 @@ margin-bottom: 0.75em;
 .dj-message {
 position: fixed;
 min-width: 30em;
-margin: 5% auto;
 left: 10%;
 right: 10%;
-top: 5%;
 z-index: 1;
 }
 

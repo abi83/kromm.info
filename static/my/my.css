@@ -15,6 +15,13 @@ p{
 .link:hover {
   color: #4bbf73;
 }
+i:hover{
+  color: #4bbf73;
+}
+i{
+  color: #55595c;
+}
+
 /* index page banner  */
 .jumbotron {
   min-height: 80vh;

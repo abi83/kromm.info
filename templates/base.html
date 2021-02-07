@@ -7,8 +7,12 @@
     <meta name="description" content="Kromm Wladimir. Developer, web master, data analyst">
     <meta name="author" content="Kromm Wladimir">
     <link rel="canonical" href="https://kromm.info">
-
     {% load static %}
+    <!-- site favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{% static 'favicon/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+
     <!-- custom bootstrap style: https://bootswatch.com/lux/ -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- some styles overridden -->
@@ -23,7 +27,6 @@
     </title>
 
     <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-
   </head>
 
   <body class="d-flex h-100 text-center">

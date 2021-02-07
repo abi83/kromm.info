@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+  <div class="container">
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Давайте работать!</h1>
+      <p class="lead">
+        Я не люблю сидеть без дела, а проекты делаю быстро. Поэтому предлагаю
+        совсем дружеские цены для работы. Давайте работать вместе!
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Консультация</h4>
+          </div>
+          <div class="card-body  d-flex flex-column">
+            <h4 class="card-sub-title">Про интернет-продажи, анализ данных и IT-технологии</h4>
+            <h2 class="card-title pricing-card-title">1000 <small class="text-muted"> руб./час.</small></h2>
+
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Как продать в интернете</li>
+              <li>Какие технологии выбрать</li>
+              <li>Парсинг и аналитика данных</li>
+              <li>Менторство</li>
+            </ul>
+            <button type="button" class="btn btn-block btn-outline-success mt-auto" data-toggle="modal" data-target="#contactForm">
+              Заказать
+            </button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Лэндинг</h4>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-sub-title">Чтобы покупатели заходили и кликали, а не просто так. Ну и красиво будет.</h4>
+            <h2 class="card-title pricing-card-title">10.000 <small class="text-muted"> руб.</small></h2>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Стильный и адаптивный</li>
+              <li>Слайдеры, плитка и иконки</li>
+              <li>Мого кликов и заявок</li>
+              <li>SEO friendly - бесплатно</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-block btn-outline-primary btn-outline-success mt-auto" data-toggle="modal" data-target="#contactForm">
+              Хочу такой
+            </button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Реклама</h4>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h4 class="card-sub-title">Яндекс.Директ, Google Ads, Facebook, Instagram и кое-что еще.</h4>
+            <h2 class="card-title pricing-card-title">5.000 <small class="text-muted"> руб.</small></h2>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Активное управление бюджетом</li>
+              <li>Высокий CTR и отличный CPC</li>
+              <li>10К объявлений легко. 100К тоже.</li>
+              <li>Просто спросить - бесплатно</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-block btn-outline-primary btn-outline-success mt-auto" data-toggle="modal" data-target="#contactForm">
+              Спросить )
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="contactForm" tabindex="-1" role="dialog" aria-labelledby="contactFormLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactFormLabel" style="color: #4bbf73;">Напишите мне! Я всем отвечаю.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {% include 'form.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

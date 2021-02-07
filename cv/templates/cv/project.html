@@ -49,7 +49,7 @@
         {% endif %}
         <p class="mb-auto text-justify"><strong>Период</strong>: {{ project.start_date|date:"M Y" }} - {{ project.end_date|date:"M Y" }}</p>
         {% if project.url %}
-        <p class="mb-auto text-justify"><strong>Ссылка</strong>: <a href="{{ project.url }}">{{ project.url }}</a></p>
+          <p class="mb-auto text-justify"><strong>Ссылка</strong>: <a href="{{ project.url }}">{{ project.url }}</a></p>
         {% endif %}
         <p class="mb-auto text-justify"><strong>Технологии</strong>: </p>
 
@@ -67,8 +67,12 @@
 
       <nav aria-label="Переключение страниц">
         <ul class="pagination">
+          {% if previous %}
           <li class="page-item"><a class="page-link btn-outline-secondary" href="{% url 'project-detail' pk=previous.pk %}">&laquo; Предыдущий</a></li>
+          {% endif %}
+          {% if next %}
           <li class="page-item"><a class="page-link btn-outline-secondary" href="{% url 'project-detail' pk=next.pk %}">Следующий &raquo;</a></li>
+          {% endif %}
         </ul>
       </nav>
 

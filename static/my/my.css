@@ -6,6 +6,15 @@ p{
   font-size: 1.4rem;
 }
 
+.card-sub-title{
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #919aa1
+}
+.link:hover {
+  color: #4bbf73;
+}
 /* index page banner  */
 .jumbotron {
   min-height: 80vh;
@@ -44,4 +53,13 @@ z-index: 1;
 .sh:hover{
   transition:.5s;
   box-shadow: 10px 10px 5px #888888;
+}
+
+/* scroll top button */
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
 }

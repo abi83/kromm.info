@@ -13,13 +13,34 @@ def study_view(request):
 
 
 def price_view(request):
-    return render(request, 'prices.html', {})
+    form = ContactForm(request.POST or None)
+    if request.POST:
+        if not form.is_valid():
+            messages.warning(
+                request,
+                _('Сообщение не было отправлено. В форме есть ошибки.'),
+                extra_tags='alert-warning'
+            )
+            return render(request, 'cv/prices.html', {
+                'form': form,
+            })
+        email = EmailMessage(
+            subject='New message from ContactForm',
+            body=f'Form data {form.data}',
+            to=['vladimir@kromm.info', ],
+        )
+        email.send()
+        messages.success(
+            request, 'Your message was sent', extra_tags='alert-success')
+
+    return render(request, 'cv/prices.html', {'form': form})
+
 
 class ProjectList(ListView):
-
     model = Project
     template_name = 'index_page.html'
     context_object_name = 'projects'
+    queryset = Project.objects.filter(active=True).prefetch_related('images')
 
     def get_context_data(self, **kwargs):
         context = super(ProjectList, self).get_context_data(**kwargs)

@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'tinymce',                   # HTML editor
+
     'django.contrib.sites',      # TODO: delete it
     'django.contrib.flatpages',  # TODO: delete it
 

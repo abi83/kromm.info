@@ -15,3 +15,5 @@ psycopg2-binary           # database engine
 requests                  # requests
 beautifulsoup4            # beautifulsoup
 lxml                      # via beautifulsoup
+
+# django-tinymce            # HTML editor.Requirement already satisfied:

@@ -1,5 +1,6 @@
 from django.db import models
 from sorl.thumbnail import ImageField
+from tinymce.models import HTMLField
 
 
 class Study(models.Model):
@@ -20,7 +21,7 @@ class Project(models.Model):
     active = models.BooleanField(default=True)
     title = models.CharField('Projects title', max_length=255)
     short_desc = models.TextField()
-    description = models.TextField()
+    description = HTMLField()
     start_date = models.DateField()
     end_date = models.DateField()
     role = models.CharField(max_length=125, null=True, blank=True)

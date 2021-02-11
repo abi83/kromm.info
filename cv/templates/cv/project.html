@@ -13,10 +13,10 @@
       <div class="col-lg-8">
 
         <div id="proj-img-carousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
+          <ol class="carousel-indicators" >
             {% for image in project.images.all %}
 
-              <li data-target="#proj-img-carousel" data-slide-to="{{ forloop.counter0	 }}" {% if forloop.first %}class="active"{% endif %}></li>
+              <li data-target="#proj-img-carousel" data-slide-to="{{ forloop.counter0	 }}" {% if forloop.first %}class="active"{% endif %} style="background-color: green;"></li>
 
             {% endfor %}
 
@@ -29,9 +29,9 @@
                   {% thumbnail image.file "700x500" crop="center" as im %}
                   <img src="{{ im.url }}" class="d-block w-100 shadow-sm" title="{{ forloop.counter }}">
                   {% endthumbnail %}
-                  <div class="carousel-caption d-none d-md-block">
-                  <h5>Заголовочек</h5>
-                  <p>Описание</p>
+                  <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, .8);">
+                  <h5>{{ image.title|default_if_none:'Скриншот' }}</h5>
+                  <p class="sm-l">{{ image.description|default_if_none:'' }}</p>
                   </div>
                 </div>
 
@@ -49,9 +49,9 @@
         {% endif %}
         <p class="mb-auto text-justify"><strong>Период</strong>: {{ project.start_date|date:"M Y" }} - {{ project.end_date|date:"M Y" }}</p>
         {% if project.url %}
-          <p class="mb-auto text-justify"><strong>Ссылка</strong>: <a href="{{ project.url }}">{{ project.url }}</a></p>
+          <p class="mb-auto text-justify"><strong>Ссылка</strong>: <a class="link" href="{{ project.url }}">{{ project.url }}</a></p>
         {% endif %}
-        <p class="mb-auto text-justify"><strong>Технологии</strong>: </p>
+        <p class="mb-auto text-justify"><strong>Краткое описание</strong>: </p>
 
         <p class="my-2 text-justify">
           {{ project.short_desc }}
@@ -68,10 +68,10 @@
       <nav aria-label="Переключение страниц">
         <ul class="pagination">
           {% if previous %}
-          <li class="page-item"><a class="page-link btn-outline-secondary" href="{% url 'project-detail' pk=previous.pk %}">&laquo; Предыдущий</a></li>
+          <li class="page-item"><a class="btn btn-outline-success" href="{% url 'project-detail' pk=previous.pk %}">&laquo; Предыдущий</a></li>
           {% endif %}
           {% if next %}
-          <li class="page-item"><a class="page-link btn-outline-secondary" href="{% url 'project-detail' pk=next.pk %}">Следующий &raquo;</a></li>
+          <li class="page-item"><a class="btn btn-outline-success" href="{% url 'project-detail' pk=next.pk %}">Следующий &raquo;</a></li>
           {% endif %}
         </ul>
       </nav>

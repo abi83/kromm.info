@@ -245,7 +245,7 @@
                     {{ project.short_desc }}
                   </p>
                   <div class="d-flex justify-content-between align-items-center mt-auto">
-                    <a href="{% url 'project-detail' pk=project.pk %}" type="button" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                    <a href="{% url 'project-detail' pk=project.pk %}" type="button" class="btn btn-sm btn-outline-success">Подробнее</a>
                     <small class="text-muted">{{ project.start_date|date:"M Y" }} - {{ project.end_date|date:"M Y" }}</small>
                   </div>
                 </div>

@@ -7,7 +7,11 @@
   <!--banner-->
   <div class="jumbotron" style="margin: 0 -1em" xmlns="http://www.w3.org/1999/html">
     <div class="overlay">
-      <h1 class="display-5">Backend разработчик, дата аналитик</h1>
+      <div style="min-height: 8rem;">
+        <h1 class="display-5" id="jumbotron-title1">Backend разработчик, дата аналитик</h1>
+        <h1 class="display-5 d-none" id="jumbotron-title2">Делаю классные сайты и лэндинги</h1>
+        <h1 class="display-5 d-none" id="jumbotron-title3">Настраиваю крутую рекламу</h1>
+      </div>
       <p class="lead">
         У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером
         в рекламном агентстве, а теперь я разрабатываю веб приложения, и сайты со сложной бизнес логикой.
@@ -20,6 +24,32 @@
     </div>
   </div>
   <hr class="featurette-divider">
+  <script>
+    var text = [
+      $('#jumbotron-title1').text(),
+      $('#jumbotron-title2').text(),
+      $('#jumbotron-title3').text(),
+    ]
+    var pos = 0;
+    var i = 0;
+    var delay = 50;
+
+    function typeon() {
+      pos++;
+      var typedText = text[i].substr(0, pos);
+      $('#jumbotron-title1').text(typedText);
+
+      if (pos < text[i].length) {
+        setTimeout(typeon, delay);
+      } else {
+        if (i < 2) {i++} else {i=0}
+        pos = 0;
+        setTimeout(typeon, 5000);
+      }
+    }
+
+    typeon();
+  </script>
 
   <!--personal-->
   <div class="row">
@@ -34,7 +64,7 @@
             <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">Делить сложную проблему на простые задачи</h5>
             </div>
-            <p class="mb-auto text-justify">
+            <p class="mb-auto text-justify sm-l">
               Разобраться в проблеме, найти подходящий инструмент для решения, выделить
               несколько простых задач, отбросить лишнее и получить результат. Это мое любимое.
             </p>
@@ -43,7 +73,7 @@
             <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">Результат - важен. Остальное вторично.</h5>
             </div>
-            <p class="mb-auto text-justify">
+            <p class="mb-auto text-justify sm-l">
               Чистый код, покрытие тестами и детальное проектирование - важны. Но экономический
               результат - важнее. Приложение, работающее с ошибками - лучше, чем хорошо
               задументированный и покрытый тестами прототип.
@@ -53,7 +83,7 @@
             <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">Программист это не про код, а про смыслы.</h5>
             </div>
-            <p class="mb-auto text-justify">
+            <p class="mb-auto text-justify sm-l">
               Показатели монетизации, конверсии и дохода на одного пользователя - вокруг этого должна
               строиться разработка. Не следовать мыслям пользователя, а опережать их. А нужные библиотеки
               подключим быстро.
@@ -74,9 +104,9 @@
   <!--  skils-->
   <div class="row">
     <div class="container">
-       <h2 class="featurette-heading">Скилы</h2>
+      <h2 class="featurette-heading">Скилы</h2>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
           <div class="col">
 
               <div class="card border-success">
@@ -134,8 +164,8 @@
                     <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   <hr>
-                  <h4 class="card-title">Network</h4>
-                  <p class="card-text">TCP/IP, HTTP, UDP</p>
+                  <h4 class="card-title">Redis</h4>
+                  <p class="card-text">NoSQL, Cache</p>
                   <div class="progress">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>

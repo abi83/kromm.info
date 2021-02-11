@@ -7,6 +7,7 @@
   <div class="container">
 
     <h1 class="project-title">{{ project.title }}</h1>
+    <p class="my-2">{{ project.short_desc }}</p>
 
     <div class="row">
 
@@ -15,35 +16,27 @@
         <div id="proj-img-carousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators" >
             {% for image in project.images.all %}
-
               <li data-target="#proj-img-carousel" data-slide-to="{{ forloop.counter0	 }}" {% if forloop.first %}class="active"{% endif %} style="background-color: green;"></li>
-
             {% endfor %}
-
           </ol>
           <div class="carousel-inner">
-
               {% for image in project.images.all %}
-
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                   {% thumbnail image.file "700x500" crop="center" as im %}
-                  <img src="{{ im.url }}" class="d-block w-100 shadow-sm" title="{{ forloop.counter }}">
+                  <img src="{{ im.url }}" class="d-block w-100 shadow-sm" title="{{ image.title|default_if_none:'' }}" alt="{{ image.description|default_if_none:'' }}">
                   {% endthumbnail %}
                   <div class="carousel-caption d-none d-md-block" style="background-color: rgba(255, 255, 255, .8);">
                   <h5>{{ image.title|default_if_none:'Скриншот' }}</h5>
                   <p class="sm-l">{{ image.description|default_if_none:'' }}</p>
                   </div>
                 </div>
-
               {% endfor %}
-
           </div>
         </div>
 
       </div>
 
       <div class="col-lg-4 text-justify">
-        <h3>Project information</h3>
         {% if project.role %}
           <p class="mb-auto text-justify"><strong>Роль</strong>: {{ project.role }} </p>
         {% endif %}
@@ -51,11 +44,6 @@
         {% if project.url %}
           <p class="mb-auto text-justify"><strong>Ссылка</strong>: <a class="link" href="{{ project.url }}">{{ project.url }}</a></p>
         {% endif %}
-        <p class="mb-auto text-justify"><strong>Краткое описание</strong>: </p>
-
-        <p class="my-2 text-justify">
-          {{ project.short_desc }}
-        </p>
       </div>
 
     </div>
@@ -64,7 +52,6 @@
     </div>
 
     <div class="row">
-
       <nav aria-label="Переключение страниц">
         <ul class="pagination">
           {% if previous %}
@@ -75,11 +62,7 @@
           {% endif %}
         </ul>
       </nav>
-
     </div>
-
-
-
   </div>
 
 {% endblock %}

@@ -2,54 +2,54 @@
 {% load static i18n %}
 {% block content %}
 
-<!--!!https://getbootstrap.com/docs/5.0/examples/album/!!!-->
-
-  <!--banner-->
-  <div class="jumbotron" style="margin: 0 -1em" xmlns="http://www.w3.org/1999/html">
-    <div class="overlay">
-      <div style="min-height: 8rem;">
-        <h1 class="display-5" id="jumbotron-title1">Backend разработчик, дата аналитик</h1>
-        <h1 class="display-5 d-none" id="jumbotron-title2">Делаю классные сайты и лэндинги</h1>
-        <h1 class="display-5 d-none" id="jumbotron-title3">Настраиваю крутую рекламу</h1>
+  <section><!--banner-->
+    <div class="jumbotron" style="margin: 0 -1em" xmlns="http://www.w3.org/1999/html">
+      <div class="overlay">
+        <div style="min-height: 8rem;">
+          <h1 class="display-5" id="jumbotron-title1">Backend разработчик, дата аналитик</h1>
+          <p class="d-none" id="jumbotron-title2">Делаю классные сайты и лэндинги</p>
+          <p class="d-none" id="jumbotron-title3">Настраиваю крутую рекламу</p>
+        </div>
+        <p class="lead">
+          У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером
+          в рекламном агентстве, а теперь я разрабатываю веб приложения, и сайты со сложной бизнес логикой.
+        </p>
+        <hr class="my-4">
+        <p>Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - моя работа.</p>
+        <a class="btn btn-primary btn-lg btn-outline-success" href="#contact-form" role="button">
+          Напишите мне
+        </a>
       </div>
-      <p class="lead">
-        У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером
-        в рекламном агентстве, а теперь я разрабатываю веб приложения, и сайты со сложной бизнес логикой.
-      </p>
-      <hr class="my-4">
-      <p>Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - моя работа.</p>
-      <a class="btn btn-primary btn-lg btn-outline-success" href="#contact-form" role="button">
-        Напишите мне
-      </a>
     </div>
-  </div>
-  <hr class="featurette-divider">
-  <script>
-    var text = [
-      $('#jumbotron-title1').text(),
-      $('#jumbotron-title2').text(),
-      $('#jumbotron-title3').text(),
-    ]
-    var pos = 0;
-    var i = 0;
-    var delay = 50;
+    <script>
+      var text = [
+        $('#jumbotron-title1').text(),
+        $('#jumbotron-title2').text(),
+        $('#jumbotron-title3').text(),
+      ]
+      var pos = 0;
+      var i = 0;
+      var delay = 50;
 
-    function typeon() {
-      pos++;
-      var typedText = text[i].substr(0, pos);
-      $('#jumbotron-title1').text(typedText);
+      function typeon() {
+        pos++;
+        var typedText = text[i].substr(0, pos);
+        $('#jumbotron-title1').text(typedText);
 
-      if (pos < text[i].length) {
-        setTimeout(typeon, delay);
-      } else {
-        if (i < 2) {i++} else {i=0}
-        pos = 0;
-        setTimeout(typeon, 5000);
+        if (pos < text[i].length) {
+          setTimeout(typeon, delay);
+        } else {
+          if (i < 2) {i++} else {i=0}
+          pos = 0;
+          setTimeout(typeon, 5000);
+        }
       }
-    }
 
-    typeon();
-  </script>
+      typeon();
+    </script>
+  <section>
+
+  <hr class="featurette-divider">
 
   <!--personal-->
   <div class="row">
@@ -121,10 +121,16 @@
                     <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   <hr>
-                  <h4 class="card-title">SQL, NoSQL</h4>
-                  <p class="card-text">MySQL, PostgreSQL, MongoDB</p>
+                  <h4 class="card-title">SQL</h4>
+                  <p class="card-text">Multi JOIN, Subqueries, Aggregate</p>
                   <div class="progress">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <hr>
+                  <h4 class="card-title">JavaScript</h4>
+                  <p class="card-text">jQuery, React, Node.js</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   <hr>
                   <h4 class="card-title">HTML</h4>
@@ -132,13 +138,6 @@
                   <div class="progress">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <hr>
-                  <h4 class="card-title">JavaScript</h4>
-                  <p class="card-text">jQuery, Node.js</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-
                   <hr>
                 </div>
               </div>
@@ -158,8 +157,8 @@
                     <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   <hr>
-                  <h4 class="card-title">Linux</h4>
-                  <p class="card-text">Nginx, uWSGI, Bash, Docker</p>
+                  <h4 class="card-title">Databases</h4>
+                  <p class="card-text">PostgreSQL, MongoDB, MySQL</p>
                   <div class="progress">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>

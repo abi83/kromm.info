@@ -13,6 +13,9 @@ li{
   letter-spacing: 2px;
   color: #919aa1
 }
+.card-text{
+  font-size: 1rem;
+}
 .link:hover {
   color: #4bbf73;
 }

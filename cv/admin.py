@@ -1,5 +1,6 @@
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin, TabbedTranslationAdmin
+from modeltranslation.admin import (
+    TranslationAdmin, TabbedTranslationAdmin, TranslationStackedInline, TranslationTabularInline)
 
 
 from .models import Study, Project, ProjectImage
@@ -12,8 +13,9 @@ class PostAdmin(TranslationAdmin):
     search_fields = ('name',)
 
 
-class ProjectImageAdmin(admin.StackedInline):
+class ProjectImageAdmin(TranslationTabularInline):
     model = ProjectImage
+    extra = 0
 
 
 @admin.register(Project)

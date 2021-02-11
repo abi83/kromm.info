@@ -16,4 +16,4 @@ requests                  # requests
 beautifulsoup4            # beautifulsoup
 lxml                      # via beautifulsoup
 
-# django-tinymce            # HTML editor.Requirement already satisfied:
+django-tinymce            # HTML editor.

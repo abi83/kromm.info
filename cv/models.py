@@ -27,6 +27,10 @@ class Project(models.Model):
     role = models.CharField(max_length=125, null=True, blank=True)
     url = models.URLField(null=True, blank=True)
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('project-detail', args=[str(self.id)])
+
 
 class ProjectImage(models.Model):
     """

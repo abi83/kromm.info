@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sitemaps',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'tinymce',                   # HTML editor
 
     'django.contrib.flatpages',  # TODO: delete it

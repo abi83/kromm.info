@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'tinymce',                   # HTML editor
 
-    'django.contrib.flatpages',  # TODO: delete it
+    # 'django.contrib.flatpages',  # TODO: delete it
 
     'sorl.thumbnail',
 

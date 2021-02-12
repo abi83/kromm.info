@@ -7,7 +7,7 @@ import logging
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, View
 from django.core.exceptions import ValidationError
@@ -71,3 +71,12 @@ class SiteDetail(DetailView, View):
             self.object.get_sitemaps(request)
             context = self.get_context_data(object=self.object)
             return render(request, self.template_name, context)
+
+
+class SitemapDetail(DetailView):
+    model = SiteMap
+    template_name = 'ads_maker/sitemap_detail.html'
+
+    def get_object(self):
+        site = get_object_or_404(WSite, pk=self.kwargs.get('site_pk'))
+        return get_object_or_404(SiteMap, pk=self.kwargs.get('pk'), site=site)

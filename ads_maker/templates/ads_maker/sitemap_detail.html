@@ -5,19 +5,13 @@
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="{% url 'index' %}#">Home</a></li>
   <li class="breadcrumb-item"><a href="{% url 'ads-maker-index' %}">Ads Maker</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'site-detail' pk=object.site.pk %}">{{ object.site.url }}</a></li>
   <li class="breadcrumb-item active">{{ object.url }}</li>
 </ol>
 
 <div class="container">
   <h1>{{ object.url }}</h1>
   <h6 class="card-subtitle mb-2 text-muted">Status: {{ object.status }}</h6>
-
-
-  {% if object.short_desc %}
-  <p class="lead">{{ object.short_desc }}</p>
-  {% else %}
-  <p class="lead text-warning">This site was not scaned yet</p>
-  {% endif %}
 
 
   <p><small>Created: {{ object.created_at }}</small></p>
@@ -62,7 +56,7 @@
     </li>
     {% for sitemap in object.sitemaps.all %}
       <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-        <div class="col-8 text-left"><a href="{% url 'sitemap-detail' site_pk=object.pk pk=sitemap.pk %}">{{ sitemap.url }}</a></div>
+      <div class="col-8 text-left">{{ sitemap.url }}</div>
       <div class="col-2"><span class="badge badge-primary badge-pill bg-dark">{{ sitemap.count_urls }}</span></div>
       <div class="col-2"><span class="badge badge-primary badge-pill bg-warning">{{ sitemap.count_sitemaps }}</span></div>
       </li>

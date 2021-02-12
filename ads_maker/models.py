@@ -103,8 +103,6 @@ class WSite(models.Model):
         else:
             messages.warning(request, 'No sitemaps was found')
 
-
-
     def __str__(self):
         return self.url
 

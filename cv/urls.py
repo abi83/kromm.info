@@ -11,6 +11,8 @@ urlpatterns = [
          name='price'),
     path('<int:pk>/',
          views.ProjecDetail.as_view(),
-         name='project-detail')
-
+         name='project-detail'),
+    path('tic-tac-toe/',
+         views.TicTacToe.as_view(),
+         name='tic-tac-toe'),
 ]

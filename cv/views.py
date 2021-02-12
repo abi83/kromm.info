@@ -2,6 +2,7 @@ from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView
+from django.views import View
 from .models import Study, Project
 from .forms import ContactForm
 from django.utils.translation import ugettext_lazy as _
@@ -88,3 +89,7 @@ class ProjecDetail(DetailView):
         context['previous'] = Project.objects.filter(pk=self.kwargs.get('pk')-1).first()
 
         return context
+
+class TicTacToe(View):
+    def get(self, request):
+        return render(request, 'cv/tic_tac_toe.html', {})

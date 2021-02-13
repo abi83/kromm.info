@@ -1,280 +1,288 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static i18n %}
 {% block content %}
 
-  <section><!--banner-->
-    <div class="jumbotron" style="margin: 0 -1em" xmlns="http://www.w3.org/1999/html">
-      <div class="overlay">
-        <div style="min-height: 8rem;">
-          <h1 class="display-5" id="jumbotron-title1">Backend разработчик, дата аналитик</h1>
-          <p class="d-none" id="jumbotron-title2">Делаю классные сайты и лэндинги</p>
-          <p class="d-none" id="jumbotron-title3">Настраиваю крутую рекламу</p>
-        </div>
-        <p class="lead">
-          У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером
-          в рекламном агентстве, а теперь я разрабатываю веб приложения, и сайты со сложной бизнес логикой.
-        </p>
-        <hr class="my-4">
-        <p>Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - моя работа.</p>
-        <a class="btn btn-primary btn-lg btn-outline-success" href="#contact-form" role="button">
-          Напишите мне
-        </a>
+<!--banner-->
+<section>
+  <div class="jumbotron" style="margin: 0 -1em" xmlns="http://www.w3.org/1999/html">
+    <div class="overlay">
+      <div style="min-height: 8rem;">
+        <h1 class="display-5" id="jumbotron-title">Backend разработчик, дата аналитик</h1>
       </div>
+      <p class="lead">
+        У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером
+        в рекламном агентстве, а теперь я разрабатываю веб приложения, и сайты со сложной бизнес логикой.
+      </p>
+      <hr class="my-4">
+      <p>Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - моя работа.</p>
+      <a class="btn btn-primary btn-lg btn-outline-success" href="#contact-form" role="button">
+        Напишите мне
+      </a>
     </div>
-    <script>
-      var text = [
-        $('#jumbotron-title1').text(),
-        $('#jumbotron-title2').text(),
-        $('#jumbotron-title3').text(),
-      ]
-      var pos = 0;
-      var i = 0;
-      var delay = 50;
+  </div>
+  <script>
+    function delay(ms) {
+      return new Promise(resolve => {
+      setTimeout(() => resolve(), ms);
+      });
+    }
 
-      function typeon() {
-        pos++;
-        var typedText = text[i].substr(0, pos);
-        $('#jumbotron-title1').text(typedText);
+    async function runText(text, timeout, setValue) {
+      let currentStr = '';
+      for (const char of text) {
+        currentStr += char;
+        setValue(currentStr);
+        element.innerText  = currentStr;
+        await delay(timeout);
+      }
+    }
 
-        if (pos < text[i].length) {
-          setTimeout(typeon, delay);
-        } else {
-          if (i < 2) {i++} else {i=0}
-          pos = 0;
-          setTimeout(typeon, 5000);
+    async function runStrings(strings, charTimeout, stringSwitchTimeout, setValue) {
+      while (true) {
+        for (const str of strings) {
+          await runText(str, charTimeout, setValue);
+          await delay(stringSwitchTimeout);
         }
       }
+    }
+    const textAr = [
+      'Backend разработчик, дата аналитик',
+      'Делаю классные сайты и лэндинги',
+      'Настраиваю крутую рекламу',
+    ];
+    const element = document.getElementById('jumbotron-title');
+    const del = 75;
 
-      typeon();
-    </script>
-  <section>
+    runStrings(textAr, del, del*30, ()=>{});
 
-  <hr class="featurette-divider">
+  </script>
+</section>
+<hr class="featurette-divider">
 
-  <!--personal-->
-  <div class="row">
-    <div class="col-md-7">
-      <h2 class="">Мне 38 лет. И я живу в Берлине</h2>
-      <h3 class="text-muted">
-        Мои принципы
-      </h3>
-      <div class="d-flex justify-content-center">
-        <div class="list-group w-75">
-          <div class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Делить сложную проблему на простые задачи</h5>
-            </div>
-            <p class="mb-auto text-justify sm-l">
-              Разобраться в проблеме, найти подходящий инструмент для решения, выделить
-              несколько простых задач, отбросить лишнее и получить результат. Это мое любимое.
-            </p>
+<!--personal-->
+<div class="row">
+  <div class="col-md-7">
+    <h2 class="">Мне 38 лет. И я живу в Берлине</h2>
+    <h3 class="text-muted">
+      Мои принципы
+    </h3>
+    <div class="d-flex justify-content-center">
+      <div class="list-group w-75">
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Делить сложную проблему на простые задачи</h5>
           </div>
-          <div class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Результат - важен. Остальное вторично.</h5>
-            </div>
-            <p class="mb-auto text-justify sm-l">
-              Чистый код, покрытие тестами и детальное проектирование - важны. Но экономический
-              результат - важнее. Приложение, работающее с ошибками - лучше, чем хорошо
-              задументированный и покрытый тестами прототип.
-            </p>
+          <p class="mb-auto text-justify sm-l">
+            Разобраться в проблеме, найти подходящий инструмент для решения, выделить
+            несколько простых задач, отбросить лишнее и получить результат. Это мое любимое.
+          </p>
+        </div>
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Результат - важен. Остальное вторично.</h5>
           </div>
-          <div class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Программист это не про код, а про смыслы.</h5>
-            </div>
-            <p class="mb-auto text-justify sm-l">
-              Показатели монетизации, конверсии и дохода на одного пользователя - вокруг этого должна
-              строиться разработка. Не следовать мыслям пользователя, а опережать их. А нужные библиотеки
-              подключим быстро.
-            </p>
+          <p class="mb-auto text-justify sm-l">
+            Чистый код, покрытие тестами и детальное проектирование - важны. Но экономический
+            результат - важнее. Приложение, работающее с ошибками - лучше, чем хорошо
+            задументированный и покрытый тестами прототип.
+          </p>
+        </div>
+        <div class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Программист это не про код, а про смыслы.</h5>
           </div>
+          <p class="mb-auto text-justify sm-l">
+            Показатели монетизации, конверсии и дохода на одного пользователя - вокруг этого должна
+            строиться разработка. Не следовать мыслям пользователя, а опережать их. А нужные библиотеки
+            подключим быстро.
+          </p>
         </div>
       </div>
     </div>
-    <div class="col-md-5">
-      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto py-3"
-           width="500" height="500"
-           src="/static/001.jpg"
-           role="img">
-    </div>
   </div>
-  <hr class="featurette-divider">
-
-  <!--  skils-->
-  <div class="row">
-    <div class="container">
-      <h2 class="featurette-heading">Скилы</h2>
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-          <div class="col">
-
-              <div class="card border-success">
-                <div class="card-header">
-                  <i class="far fa-file-code fa-3x" style="margin-bottom: 0.5em"></i></br>
-                  <p>Hard skills</p>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Python</h4>
-                  <p class="card-text">Django, DRF, Flask</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">SQL</h4>
-                  <p class="card-text">Multi JOIN, Subqueries, Aggregate</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">JavaScript</h4>
-                  <p class="card-text">jQuery, React, Node.js</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">HTML</h4>
-                  <p class="card-text">HTML5.0, CSS, Bootsrap</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                </div>
-              </div>
-
-          </div>
-          <div class="col">
-
-              <div class="card border-success">
-                <div class="card-header">
-                  <i class="fas fa-tools fa-3x" style="margin-bottom: 0.5em"></i></br>
-                  <p>Инструменты</p>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">DevOps</h4>
-                  <p class="card-text">Linux, Nginx, Docker, Git</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">Databases</h4>
-                  <p class="card-text">PostgreSQL, MongoDB, MySQL</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">Redis</h4>
-                  <p class="card-text">NoSQL, Cache</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">Elasticsearch</h4>
-                  <p class="card-text">Index, Mapping, Query and filter</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-
-                  <hr>
-                </div>
-              </div>
-
-          </div>
-          <div class="col">
-
-              <div class="card border-success">
-                <div class="card-header">
-                  <i class="fas fa-book-open fa-3x" style="margin-bottom: 0.5em"></i></br>
-                  <p>Библиотеки</p>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Test</h4>
-                  <p class="card-text">Unittest, Pytest</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">Parse data</h4>
-                  <p class="card-text">Requests, Beautifulsoup, Scrapy</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                  <h4 class="card-title">Data analysis</h4>
-                  <p class="card-text">NumPy , Matplotlib , Pandas</p>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <hr>
-                </div>
-              </div>
-
-          </div>
-        </div>
-    </div>
+  <div class="col-md-5">
+    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto py-3"
+         width="500" height="500"
+         src="/static/001.jpg"
+         role="img" alt="Kromm Vladimir">
   </div>
-  <hr class="featurette-divider">
+</div>
+<hr class="featurette-divider">
 
-  <!-- scripts and styles for custom slider-->
-  <script src="/static/my/wow.min.js"></script>
-  <script src="/static/my/scripts.js"></script>
-  <link rel="stylesheet" href="{% static 'my/custom-multi-items-carousel.min.css' %}">
-
-  <h2 class="featurette-heading">Мои проекты</h2>
-  {% load thumbnail %}
-
-  <!-- projects carousel v.2 -->
-  <div class="top-content">
-    <div class="container-fluid">
-      <div id="carousel-example" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner row w-100 mx-auto" role="listbox" >
-          {% for project in projects %}
-
-            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 {% if forloop.first %}active{% endif %}">
-              <div class="card shadow-sm" style="min-height: 45em;">
-                {% thumbnail project.images.first.file "250x250" crop="center" as im %}
-                <a href="{% url 'project-detail' pk=project.pk %}">
-                <img class="card-img sh" src="{{ im.url }}" title="{{ project.title }}" alt="{{ project.title  }}">
-                </a>
-                {% endthumbnail %}
-
-                <div class="card-body d-flex flex-column">
-                  <a class="lead link" href="{% url 'project-detail' pk=project.pk %}">{{ project.title }}</a>
-                  <p class="card-text">
-                    {{ project.short_desc }}
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center mt-auto">
-                    <a href="{% url 'project-detail' pk=project.pk %}" type="button" class="btn btn-sm btn-outline-success">Подробнее</a>
-                    <small class="text-muted">{{ project.start_date|date:"M Y" }} - {{ project.end_date|date:"M Y" }}</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          {% endfor %}
-
-        </div>
-        <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <!--contact-form-->
-  <a name="contact-form"></a>
+<!--  skils-->
+<div class="row">
   <div class="container">
-   <h2 class="featurette-heading">Контакты</h2>
-    <div class="row">
-          {% include 'form.html' %}
+    <h2 class="featurette-heading">Скилы</h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <div class="col">
+
+            <div class="card border-success">
+              <div class="card-header">
+                <i class="far fa-file-code fa-3x" style="margin-bottom: 0.5em"></i></br>
+                <p>Hard skills</p>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Python</h4>
+                <p class="card-text">Django, DRF, Flask</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">SQL</h4>
+                <p class="card-text">Multi JOIN, Subqueries, Aggregate</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">JavaScript</h4>
+                <p class="card-text">jQuery, React, Node.js</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">HTML</h4>
+                <p class="card-text">HTML5.0, CSS, Bootsrap</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+              </div>
+            </div>
+
+        </div>
+        <div class="col">
+
+            <div class="card border-success">
+              <div class="card-header">
+                <i class="fas fa-tools fa-3x" style="margin-bottom: 0.5em"></i></br>
+                <p>Инструменты</p>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">DevOps</h4>
+                <p class="card-text">Linux, Nginx, Docker, Git</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">Databases</h4>
+                <p class="card-text">PostgreSQL, MongoDB, MySQL</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">Redis</h4>
+                <p class="card-text">NoSQL, Cache</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">Elasticsearch</h4>
+                <p class="card-text">Index, Mapping, Query and filter</p>
+                <div class="progress">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <hr>
+              </div>
+            </div>
+
+        </div>
+        <div class="col">
+
+            <div class="card border-success">
+              <div class="card-header">
+                <i class="fas fa-book-open fa-3x" style="margin-bottom: 0.5em"></i></br>
+                <p>Библиотеки</p>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Test</h4>
+                <p class="card-text">Unittest, Pytest</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">Parse data</h4>
+                <p class="card-text">Requests, Beautifulsoup, Scrapy</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+                <h4 class="card-title">Data analysis</h4>
+                <p class="card-text">NumPy , Matplotlib , Pandas</p>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr>
+              </div>
+            </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+<hr class="featurette-divider">
+
+<!-- scripts and styles for custom slider-->
+<script src="{% static '/my/wow.min.js' %}"></script>
+<script src="{% static '/my/scripts.js' %}"></script>
+<link rel="stylesheet" href="{% static 'my/custom-multi-items-carousel.min.css' %}">
+
+<h2 class="featurette-heading">Мои проекты</h2>
+{% load thumbnail %}
+
+<!-- projects carousel v.2 -->
+<div class="top-content">
+  <div class="container-fluid">
+    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner row w-100 mx-auto" role="listbox" >
+        {% for project in projects %}
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 {% if forloop.first %}active{% endif %}">
+            <div class="card shadow-sm" style="min-height: 45em;">
+              {% thumbnail project.images.first.file "250x250" crop="center" as im %}
+              <a href="{% url 'project-detail' pk=project.pk %}">
+              <img class="card-img sh" src="{{ im.url }}" title="{{ project.title }}" alt="{{ project.title  }}">
+              </a>
+              {% endthumbnail %}
+
+              <div class="card-body d-flex flex-column">
+                <a class="lead link" href="{% url 'project-detail' pk=project.pk %}">{{ project.title }}</a>
+                <p class="card-text">
+                  {{ project.short_desc }}
+                </p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <a href="{% url 'project-detail' pk=project.pk %}" type="button" class="btn btn-sm btn-outline-success">Подробнее</a>
+                  <small class="text-muted">{{ project.start_date|date:"M Y" }} - {{ project.end_date|date:"M Y" }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+
+      </div>
+      <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
+</div>
+
+<hr class="featurette-divider">
+
+<!--contact-form-->
+<a name="contact-form"></a>
+<div class="container">
+ <h2 class="featurette-heading">Контакты</h2>
+  <div class="row">
+        {% include 'form.html' %}
+  </div>
+</div>
 
 {% endblock %}

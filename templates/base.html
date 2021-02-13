@@ -1,6 +1,6 @@
 <!doctype html>
-{% load i18n %}
-<html class="h-100" lang="{% get_current_language as LANGUAGE_CODE %}">
+{% load i18n %}{% get_current_language as LANGUAGE_CODE %}
+<html class="h-100" lang="{{ LANGUAGE_CODE }}">
 
 <head>
   <style>
@@ -60,10 +60,6 @@
   .navbar-toggler{padding:0.25rem 0.75rem;font-size:1.09375rem;line-height:1;background-color:transparent;border:1px solid transparent;}
   .navbar-toggler:hover,.navbar-toggler:focus{text-decoration:none;}
   .navbar-toggler-icon{display:inline-block;width:1.5em;height:1.5em;vertical-align:middle;content:"";background:50%/100%100%no-repeat;}
-  .navbar-light.navbar-toggler{color:rgba(0,0,0,0.3);border-color:rgba(0,0,0,0.1);}
-  .navbar-light.navbar-toggler-icon{
-  background-image:url("data:image/svg+xml,%3csvgxmlns='http://www.w3.org/2000/svg'width='30'height='30'viewBox='003030'%3e%3cpathstroke='rgba%280,0,0,0.3%29'stroke-linecap='round'stroke-miterlimit='10'stroke-width='2'd='M47h22M415h22M423h22'/%3e%3c/svg%3e");
-  }
   .card{position:relative;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;}
   .card-body{min-height:1px;padding:1.25rem;}
   .card-title{margin-bottom:0.75rem;}
@@ -72,17 +68,21 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kromm Wladimir. Developer, web master, data analyst">
+  <meta name="description" content="Full Stack developer, Data analyst, online ads expert. I make superior landing pages and powerful ads for your business.">
   <meta name="author" content="Kromm Wladimir">
-  <link rel="canonical" href="https://kromm.info">
+  <link rel="canonical" href="https://kromm.info/{{ LANGUAGE_CODE }}/">
 
-  <!-- Facebook metadata
-  og:url	https://kromm.info/en/
-  og:title	Python developer, webmaster, data analyst | Wladimir Kromm
-  og:description	Kromm Wladimir. Developer, web master, data analyst
-  og:image	https://kromm.info/static/001.jpg
-  og:image:alt
-  -->
+  <!-- Facebook metadata-->
+  <meta property="og:url"                content="https://www.kromm.info/" />
+  <meta property="og:type"               content="website" />
+  <meta property="og:title"              content="Kromm Wladimir. Python developer" />
+  <meta property="og:description"        content="Full Stack developer, Data analyst, online ads expert. I make superior landing pages and powerful ads for your business." />
+  <meta property="og:image"              content="https://kromm.info/static/001_fb.jpg" />
+  <meta property="og:locale"             content="en_US" />
+  <meta property="og:locale:alternate"   content="ru_RU" />
+  <meta property="og:locale:alternate"   content="de_DE" />
+
+
 
   {% load static %}
   <!-- site favicons -->

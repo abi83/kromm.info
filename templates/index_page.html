@@ -7,16 +7,19 @@
   <div class="jumbotron" style="margin: 0 -1em" xmlns="http://www.w3.org/1999/html">
     <div class="overlay">
       <div style="min-height: 8rem;">
-        <h1 class="display-5" id="jumbotron-title">Backend разработчик, дата аналитик</h1>
+        <h1 class="display-5" id="jumbotron-title">
+          {% blocktrans %}Python разработчик, дата аналитик{% endblocktrans %}
+        </h1>
       </div>
       <p class="lead">
-        У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером
-        в рекламном агентстве, а теперь я разрабатываю веб приложения, и сайты со сложной бизнес логикой.
+        {% blocktrans %}У меня математическое и финансовое высшее образование, я 15 лет проработал ТОП-менеджером в рекламном агентстве, а теперь я разрабатываю веб приложения, и сайты со сложной бизнес логикой.{% endblocktrans %}
       </p>
       <hr class="my-4">
-      <p>Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - моя работа.</p>
+      <p>
+        {% blocktrans %}Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - моя работа.{% endblocktrans %}
+      </p>
       <a class="btn btn-primary btn-lg btn-outline-success" href="#contact-form" role="button">
-        Напишите мне
+        {% blocktrans %}Напишите мне{% endblocktrans %}
       </a>
     </div>
   </div>
@@ -46,9 +49,9 @@
       }
     }
     const textAr = [
-      'Backend разработчик, дата аналитик',
-      'Делаю классные сайты и лэндинги',
-      'Настраиваю крутую рекламу',
+      {% trans 'Python разработчик, дата аналитик' %},
+      {% trans 'Делаю классные сайты и лэндинги' %},
+      {% trans 'Настраиваю крутую рекламу' %},
     ];
     const element = document.getElementById('jumbotron-title');
     const del = 75;
@@ -62,39 +65,42 @@
 <!--personal-->
 <div class="row">
   <div class="col-md-7">
-    <h2 class="">Мне 38 лет. И я живу в Берлине</h2>
+    <h2 class="">
+      {% blocktrans %}Мне 37 лет. И я живу в Берлине{% endblocktrans %}
+    </h2>
     <h3 class="text-muted">
-      Мои принципы
+      {% blocktrans %}Мои принципы{% endblocktrans %}
     </h3>
     <div class="d-flex justify-content-center">
       <div class="list-group w-75">
         <div class="list-group-item list-group-item-action">
           <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Делить сложную проблему на простые задачи</h5>
+          <h5 class="mb-1">
+            {% blocktrans %}Делить сложную проблему на простые задачи{% endblocktrans %}
+          </h5>
           </div>
           <p class="mb-auto text-justify sm-l">
-            Разобраться в проблеме, найти подходящий инструмент для решения, выделить
-            несколько простых задач, отбросить лишнее и получить результат. Это мое любимое.
+            {% blocktrans %}Разобраться в проблеме, найти подходящий инструмент для решения, выделить несколько простых задач, отбросить лишнее и получить результат. Это мое любимое.{% endblocktrans %}
           </p>
         </div>
         <div class="list-group-item list-group-item-action">
           <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Результат - важен. Остальное вторично.</h5>
+          <h5 class="mb-1">
+            {% blocktrans %}Результат - важен. Остальное вторично.{% endblocktrans %}
+          </h5>
           </div>
           <p class="mb-auto text-justify sm-l">
-            Чистый код, покрытие тестами и детальное проектирование - важны. Но экономический
-            результат - важнее. Приложение, работающее с ошибками - лучше, чем хорошо
-            задументированный и покрытый тестами прототип.
+            {% blocktrans %}Чистый код, покрытие тестами и детальное проектирование - важны. Но экономический результат - важнее. Приложение, работающее с ошибками - лучше, чем хорошо задументированный и покрытый тестами прототип.{% endblocktrans %}
           </p>
         </div>
         <div class="list-group-item list-group-item-action">
           <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">Программист это не про код, а про смыслы.</h5>
+          <h5 class="mb-1">
+            {% blocktrans %}Программист это не про код, а про смыслы.{% endblocktrans %}
+          </h5>
           </div>
           <p class="mb-auto text-justify sm-l">
-            Показатели монетизации, конверсии и дохода на одного пользователя - вокруг этого должна
-            строиться разработка. Не следовать мыслям пользователя, а опережать их. А нужные библиотеки
-            подключим быстро.
+            {% blocktrans %}Показатели монетизации, конверсии и дохода на одного пользователя - вокруг этого должна строиться разработка. Не следовать мыслям пользователя, а опережать их. А нужные библиотеки подключим быстро.{% endblocktrans %}
           </p>
         </div>
       </div>
@@ -112,8 +118,7 @@
 <!--  skils-->
 <div class="row">
   <div class="container">
-    <h2 class="featurette-heading">Скилы</h2>
-
+    <h2 class="featurette-heading">{% trans "Скилы" %}</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         <div class="col">
 
@@ -136,7 +141,7 @@
                 </div>
                 <hr>
                 <h4 class="card-title">JavaScript</h4>
-                <p class="card-text">jQuery, React, Node.js</p>
+                <p class="card-text">TypeScript, React, Node.js</p>
                 <div class="progress">
                   <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
@@ -156,7 +161,7 @@
             <div class="card border-success">
               <div class="card-header">
                 <i class="fas fa-tools fa-3x" style="margin-bottom: 0.5em"></i></br>
-                <p>Инструменты</p>
+                <p>{% trans "Инструменты" %}</p>
               </div>
               <div class="card-body">
                 <h4 class="card-title">DevOps</h4>
@@ -193,7 +198,7 @@
             <div class="card border-success">
               <div class="card-header">
                 <i class="fas fa-book-open fa-3x" style="margin-bottom: 0.5em"></i></br>
-                <p>Библиотеки</p>
+                <p>{% trans "Библиотеки" %}</p>
               </div>
               <div class="card-body">
                 <h4 class="card-title">Test</h4>
@@ -228,7 +233,9 @@
 <script src="{% static '/my/scripts.min.js' %}"></script>
 <link rel="stylesheet" href="{% static 'my/custom-multi-items-carousel.min.css' %}">
 
-<h2 class="featurette-heading">Мои проекты</h2>
+<h2 class="featurette-heading">
+{% blocktrans %}Мои проекты{% endblocktrans %}
+</h2>
 {% load thumbnail %}
 
 <!-- projects carousel v.2 -->
@@ -252,7 +259,7 @@
                   {{ project.short_desc }}
                 </p>
                 <div class="d-flex justify-content-between align-items-center mt-auto">
-                  <a href="{% url 'project-detail' pk=project.pk %}" type="button" class="btn btn-sm btn-outline-success">Подробнее</a>
+                  <a href="{% url 'project-detail' pk=project.pk %}" type="button" class="btn btn-sm btn-outline-success">{% trans "Подробнее" %}</a>
                   <small class="text-muted">{{ project.start_date|date:"M Y" }} - {{ project.end_date|date:"M Y" }}</small>
                 </div>
               </div>
@@ -279,7 +286,7 @@
 <!--contact-form-->
 <a name="contact-form"></a>
 <div class="container">
- <h2 class="featurette-heading">Контакты</h2>
+ <h2 class="featurette-heading">{% trans "Контакты" %}</h2>
   <div class="row">
     {% include 'form.html' %}
   </div>

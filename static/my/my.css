@@ -2,6 +2,10 @@
 p{
   font-size: 1.3rem;
 }
+::selection {
+  color: white;
+  background: black;
+}
 li{
   font-size: 1.1rem;
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 19:48+0700\n"
+"POT-Creation-Date: 2021-04-16 22:13+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\index_page.html:11 .\templates\index_page.html:52
+#: .\templates\form.html:84
+msgid "Отправить"
+msgstr "Send"
+
+#: .\templates\index_page.html:11
 msgid "Python разработчик, дата аналитик"
 msgstr "Python developer, data analyst"
 
@@ -29,7 +33,7 @@ msgid ""
 "приложения, и сайты со сложной бизнес логикой."
 msgstr ""
 "I have a higher education in mathematics and finance, I worked for 15 years "
-"as a top manager in an advs agency, and now I develop web applications and "
+"as a top manager in an ads agency, and now I develop web applications and "
 "sites with complex business logic."
 
 #: .\templates\index_page.html:19
@@ -44,13 +48,17 @@ msgstr ""
 msgid "Напишите мне"
 msgstr "Text me"
 
+#: .\templates\index_page.html:52
+msgid "'Python разработчик, дата аналитик'"
+msgstr "'Python developer, data analyst'"
+
 #: .\templates\index_page.html:53
-msgid "Делаю классные сайты и лэндинги"
-msgstr "Full Stack web developer"
+msgid "'Делаю классные сайты и лэндинги'"
+msgstr "'Full Stack web developer'"
 
 #: .\templates\index_page.html:54
-msgid "Настраиваю крутую рекламу"
-msgstr "Online marketing expert"
+msgid "'Настраиваю крутую рекламу'"
+msgstr "'Online marketing expert'"
 
 #: .\templates\index_page.html:69
 msgid "Мне 37 лет. И я живу в Берлине"
@@ -82,7 +90,7 @@ msgstr "The result is important. The rest is secondary."
 msgid ""
 "Чистый код, покрытие тестами и детальное проектирование - важны. Но "
 "экономический результат - важнее. Приложение, работающее с ошибками - лучше, "
-"чем хорошо задументированный и покрытый тестами прототип."
+"чем хорошо задокументированный и покрытый тестами прототип."
 msgstr ""
 "Clean code, test coverage, and detailed design are important. But the "
 "economic result is more important. An application working with bugs is "
@@ -133,3 +141,41 @@ msgstr "Prices"
 #: .\templates\navbar.html:37
 msgid "Приложения"
 msgstr "Applications"
+
+msgid "В телефоне должно быть от 7 до 12 цифр"
+msgstr "From 7 to 12 digits in phone number"
+
+msgid "Имя"
+msgstr "First name"
+
+msgid "Фамилия"
+msgstr "Last name"
+
+msgid "Введите корректный е-мейл"
+msgstr "Enter valid email"
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid ""
+"От 7 до 25 знаков. Допускаются цифры, скобки (), пробелы и знаки + и -. "
+"Можно оставить пустым."
+msgstr ""
+"From 7 to 25 characters. Numbers, brackets (), spaces, + and - characters "
+"allowed. Can be blank."
+
+msgid "Почтовый адрес"
+msgstr "Mailing address"
+
+msgid "Сообщение"
+msgstr "Message"
+
+msgid "Сообщение не было отправлено. В форме есть ошибки."
+msgstr "Errors in form. The message was not send."
+
+msgid ""
+"Сообщение не было отправлено. В <a href=\"#contact-form\"class=\"alert-"
+"link\">форме</a> есть ошибки."
+msgstr ""
+"Errors in <a href=\"#contact-form\"class=\"alert-link\">form</a>. "
+"The message was not send"

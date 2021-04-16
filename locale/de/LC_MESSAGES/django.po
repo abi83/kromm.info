@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-14 00:44+0700\n"
+"POT-Creation-Date: 2021-04-16 22:42+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,169 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\index.html:4
-msgid "Привет, Мир"
-msgstr "Wilkommen"
+#: .\cv\forms.py:17
+msgid "В телефоне должно быть от 7 до 12 цифр"
+msgstr "Die Telefonnummer muss zwischen 7 und 12 Ziffern liegen"
 
-#: .\templates\index.html:11
-msgid "Здорова, Мир"
-msgstr "Hallo"
+#: .\cv\forms.py:21
+msgid "Имя"
+msgstr "Vorname"
+
+#: .\cv\forms.py:26
+msgid "Фамилия"
+msgstr "Nachname"
+
+#: .\cv\forms.py:35
+msgid "Введите корректный е-мейл"
+msgstr "Bitte geben Sie eine gültige Email-Adresse ein"
+
+#: .\cv\forms.py:41
+msgid "Телефон"
+msgstr "Telefonnummer"
+
+#: .\cv\forms.py:45
+msgid ""
+"От 7 до 25 знаков. Допускаются цифры, скобки (), пробелы и знаки + и -. "
+"Можно оставить пустым."
+msgstr "7 bis 25 Zeichen. Zahlen, Klammern (), Leerzeichen und Zeichen + und - sind zulässig. Kann leer gelassen werden."
+
+#: .\cv\forms.py:53
+msgid "Почтовый адрес"
+msgstr "Postanschrift"
+
+#: .\cv\forms.py:59
+msgid "Сообщение"
+msgstr "die Nachricht"
+
+#: .\cv\views.py:22
+msgid "Сообщение не было отправлено. В форме есть ошибки."
+msgstr "Die Nachricht wurde nicht gesendet. Das Formular enthält Fehler."
+
+#: .\cv\views.py:56
+msgid ""
+"Сообщение не было отправлено. В <a href=\"#contact-form\"class=\"alert-link"
+"\">форме</a> есть ошибки."
+msgstr "Die Nachricht wurde nicht gesendet. Das <a href=\"#contact-form\"class=\"alert-link"
+"\">Formular</a> enthält Fehler."
+
+#: .\djanger\settings.py:151
+msgid "Russia"
+msgstr ""
+
+#: .\djanger\settings.py:152
+msgid "English"
+msgstr ""
+
+#: .\djanger\settings.py:153
+msgid "Germanya"
+msgstr ""
+
+#: .\templates\form.html:84
+msgid "Отправить"
+msgstr "Senden"
+
+#: .\templates\index_page.html:11
+msgid "Python разработчик, дата аналитик"
+msgstr "Python-Entwickler, Datenanalyst"
+
+#: .\templates\index_page.html:15
+msgid ""
+"У меня математическое и финансовое высшее образование, я 15 лет проработал "
+"ТОП-менеджером в рекламном агентстве, а теперь я разрабатываю веб "
+"приложения, и сайты со сложной бизнес логикой."
+msgstr "Ich habe eine höhere Ausbildung in Mathematik und Finanzen, habe 15 Jahre als Top-Manager in einer Werbeagentur gearbeitet und entwickle jetzt Webanwendungen und Websites mit komplexer Geschäftslogik."
+
+#: .\templates\index_page.html:19
+msgid ""
+"Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - "
+"моя работа."
+msgstr "Es ist meine Aufgabe, die Effizienz Ihres Vertriebs, Marketings und Geschäfts durch IT-Lösungen zu verbessern."
+
+#: .\templates\index_page.html:22
+msgid "Напишите мне"
+msgstr "Schreib mir"
+
+#: .\templates\index_page.html:52
+msgid "'Python разработчик, дата аналитик'"
+msgstr "'Python-Entwickler, Datenanalyst'"
+
+#: .\templates\index_page.html:53
+msgid "'Делаю классные сайты и лэндинги'"
+msgstr "'Full Stack web developer'"
+
+#: .\templates\index_page.html:54
+msgid "'Настраиваю крутую рекламу'"
+msgstr "'Online-Marketing-Experte'"
+
+#: .\templates\index_page.html:69
+msgid "Мне 37 лет. И я живу в Берлине"
+msgstr "Ich bin 37 Jahre alt. Und ich lebe in Berlin"
+
+#: .\templates\index_page.html:72
+msgid "Мои принципы"
+msgstr "Meine Prinzipien"
+
+#: .\templates\index_page.html:79
+msgid "Делить сложную проблему на простые задачи"
+msgstr "Teilen Sie ein komplexes Problem in einfache Aufgaben"
+
+#: .\templates\index_page.html:83
+msgid ""
+"Разобраться в проблеме, найти подходящий инструмент для решения, выделить "
+"несколько простых задач, отбросить лишнее и получить результат. Это мое "
+"любимое."
+msgstr "Verstehen Sie das Problem, finden Sie das richtige Werkzeug für die Lösung, markieren Sie einige einfache Aufgaben, verwerfen Sie das Unnötige und erhalten Sie das Ergebnis. Das ist mein Lieblings."
+
+#: .\templates\index_page.html:89
+msgid "Результат - важен. Остальное вторично."
+msgstr "Das Ergebnis ist wichtig. Der Rest ist zweitrangig."
+
+#: .\templates\index_page.html:93
+msgid ""
+"Чистый код, покрытие тестами и детальное проектирование - важны. Но "
+"экономический результат - важнее. Приложение, работающее с ошибками - лучше, "
+"чем хорошо задокументированный и покрытый тестами прототип."
+msgstr "Sauberer Code, Testabdeckung und detailliertes Design sind wichtig. Das wirtschaftliche Ergebnis ist jedoch wichtiger. Eine Buggy-App ist besser als ein gut dokumentierter und testbedeckter Prototyp."
+
+#: .\templates\index_page.html:99
+msgid "Программист это не про код, а про смыслы."
+msgstr "Beim Programmierer geht es nicht um den Code, sondern um die Bedeutungen."
+
+#: .\templates\index_page.html:103
+msgid ""
+"Показатели монетизации, конверсии и дохода на одного пользователя - вокруг "
+"этого должна строиться разработка. Не следовать мыслям пользователя, а "
+"опережать их. А нужные библиотеки подключим быстро."
+msgstr "Darauf aufbauend sollten Metriken für Monetarisierung, Conversion und Umsatz pro Benutzer aufgebaut werden. Folgen Sie nicht den Gedanken des Benutzers, sondern gehen Sie ihnen voraus. Und wir werden die notwendigen Bibliotheken schnell verbinden."
+
+#: .\templates\index_page.html:121
+msgid "Скилы"
+msgstr "Kompetenzen"
+
+#: .\templates\index_page.html:164
+msgid "Инструменты"
+msgstr "Werkzeuge"
+
+#: .\templates\index_page.html:201
+msgid "Библиотеки"
+msgstr "Bibliotheken"
+
+#: .\templates\index_page.html:237
+msgid "Мои проекты"
+msgstr "Meine Projekte"
+
+#: .\templates\index_page.html:262
+msgid "Подробнее"
+msgstr "Details"
+
+#: .\templates\index_page.html:289 .\templates\navbar.html:33
+msgid "Контакты"
+msgstr "Kontakte"
+
+#: .\templates\navbar.html:30
+msgid "Услуги"
+msgstr "Preise"
+
+#: .\templates\navbar.html:37
+msgid "Приложения"
+msgstr "Apps"

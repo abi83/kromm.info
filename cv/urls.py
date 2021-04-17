@@ -10,7 +10,7 @@ urlpatterns = [
          views.price_view,
          name='price'),
     path('<int:pk>/',
-         views.ProjecDetail.as_view(),
+         views.ProjectDetail.as_view(),
          name='project-detail'),
     path('tic-tac-toe/',
          views.TicTacToe.as_view(),

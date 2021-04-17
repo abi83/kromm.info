@@ -76,19 +76,19 @@ class ProjectList(ListView):
         })
 
 
-class ProjecDetail(DetailView):
+class ProjectDetail(DetailView):
     model = Project
     template_name = 'cv/project.html'
     context_object_name = 'project'
 
     def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
+        # TODO: this is absolutely wrong!
         context['next'] = Project.objects.filter(pk=self.kwargs.get('pk')+1).first()
         context['previous'] = Project.objects.filter(pk=self.kwargs.get('pk')-1).first()
 
         return context
+
 
 class TicTacToe(View):
     def get(self, request):

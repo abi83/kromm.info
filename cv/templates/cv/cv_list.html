@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% load thumbnail %}
+
+{% block content %}
+
+  {% for cv in cvs %}
+    <a href="{% url 'cv-detail' pk=cv.pk %}">{{ cv.position }}</a>
+  {% endfor %}
+
+{% endblock %}

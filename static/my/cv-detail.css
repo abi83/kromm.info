@@ -1,0 +1,38 @@
+.cv{
+  border: 1px inset black;
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "cv-header cv-main"
+    "cv-secondary cv-main";
+  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 4fr 8fr;
+}
+.cv-header{
+  background-color: #5a5a5a;
+  color: white;
+  grid-area: cv-header;
+}
+.cv-secondary{
+  grid-area: cv-secondary;
+}
+.cv-main{
+  grid-area: cv-main;
+}
+@media print {
+  header, footer{
+    display: none;
+  }
+}
+@media all and (max-width: 575px) {
+  .cv{
+    grid-template-areas:
+      "cv-header"
+      "cv-main"
+      "cv-secondary";
+    grid-template-rows: max-content;
+    grid-template-columns: 1fr;
+  }
+}

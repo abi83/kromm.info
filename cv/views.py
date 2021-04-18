@@ -3,14 +3,14 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from django.views import View
-from .models import Study, Project
+from .models import Study, Project, CV
 from .forms import ContactForm
 from django.utils.translation import ugettext_lazy as _
 
 
-def study_view(request):
-    nsu = Study.objects.get(pk=1)
-    return render(request, 'index.html', {'uni': nsu})
+# def study_view(request):
+#     nsu = Study.objects.get(pk=1)
+#     return render(request, 'index.html', {'uni': nsu})
 
 
 def price_view(request):
@@ -88,6 +88,19 @@ class ProjectDetail(DetailView):
         context['previous'] = Project.objects.filter(pk=self.kwargs.get('pk')-1).first()
 
         return context
+
+
+class CVDetail(DetailView):
+    model = CV
+    template_name = 'cv/cv_detail.html'
+    context_object_name = 'cv'
+
+
+class CVList(ListView):
+    model = CV
+    template_name = 'cv/cv_list.html'
+    context_object_name = 'cvs'
+    queryset = CV.objects.all()
 
 
 class TicTacToe(View):

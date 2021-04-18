@@ -3,11 +3,11 @@ from modeltranslation.admin import (
     TranslationAdmin, TabbedTranslationAdmin, TranslationStackedInline, TranslationTabularInline)
 
 
-from .models import Study, Project, ProjectImage
+from .models import Study, Project, ProjectImage, CV, Skill, Job
 
 
 @admin.register(Study)
-class PostAdmin(TranslationAdmin):
+class StudyAdmin(TabbedTranslationAdmin):
     list_display = ('name', )
     empty_value_display = '-пусто-'
     search_fields = ('name',)
@@ -22,3 +22,18 @@ class ProjectImageAdmin(TranslationTabularInline):
 class ProjectAdmin(TabbedTranslationAdmin):
     list_display = ('title', 'short_desc', 'start_date', 'end_date', 'active')
     inlines = [ProjectImageAdmin, ]
+
+
+@admin.register(CV)
+class CVAdmin(TabbedTranslationAdmin):
+    pass
+
+
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Job)
+class JobAdmin(TabbedTranslationAdmin):
+    pass

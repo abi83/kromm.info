@@ -3,6 +3,9 @@
   text-align: justify;
   margin-bottom: 0;
 }
+b{
+  font-weight: bold;
+}
 .cv{
   border: 1px inset black;
   max-width: 960px;
@@ -32,7 +35,7 @@
   grid-area: cv-main;
 }
 .cv-section{
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
 }
 .cv-h1{
   color: inherit;
@@ -43,7 +46,6 @@
   color: #333333;
   font-size: 1.8em;
   text-align: left;
-  margin-bottom: 0.5em;
 }
 .cv-subheader{
   font-size: 1.5em;
@@ -52,7 +54,7 @@
   color: inherit;
   text-transform: inherit;
   margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  margin-top: 1.5em;
 }
 .cv-header-icon{
   display: flex;

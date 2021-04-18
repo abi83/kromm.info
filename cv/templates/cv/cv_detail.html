@@ -37,8 +37,17 @@
         <h2 class="cv-h2">Образование</h2>
         {% for uni in cv.education.all %}
           <h3 class="cv-subheader">{{ uni.name }}</h3>
-          <p class="common">{{ uni.degree }}</p>
-          <p class="common">{{ uni.start_date|date:'Y' }} - {{ uni.end_date|date:'Y' }}</p>
+          <p class="common"><b>{{ uni.degree }}</b></p>
+          <div class="cv-header-icon">
+            <i class="far fa-calendar-alt"></i>
+            <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="cv-section">
+        <h2 class="cv-h2">Сиклы</h2>
+        {% for skill in cv.skills.all %}
+          <p class="common">{{ skill }}</p>
         {% endfor %}
       </div>
     </section>
@@ -54,9 +63,12 @@
       <div class="cv-section">
         <h2 class="cv-h2">Опыт работы</h2>
         {% for job in cv.jobs.all %}
-          <h3 class="cv-subheader">{{ job.name }}</h3>
-          <p class="common">{{ job.start_date|date:'Y' }} - {{ job.end_date|date:'Y' }}</p>
-          <p class="common">{{ job.position }}</p>
+          <h3 class="cv-subheader"><b>{{ job.name }}</b></h3>
+          <p class="common"><b>{{ job.position }}</b></p>
+          <div class="cv-header-icon">
+            <i class="far fa-calendar-alt"></i>
+            <p class="common">{{ job.start_date|date:'M.Y' }} - {{ job.end_date|date:'M.Y' }}</p>
+          </div>
           {{ job.description|safe }}
         {% endfor %}
       </div>

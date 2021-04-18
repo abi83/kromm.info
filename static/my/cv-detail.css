@@ -1,3 +1,8 @@
+.common{
+  font-size: 1em;
+  text-align: justify;
+  margin-bottom: 0;
+}
 .cv{
   border: 1px inset black;
   max-width: 960px;
@@ -7,11 +12,16 @@
   grid-template-areas:
     "cv-header cv-main"
     "cv-secondary cv-main";
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 1fr 4fr;
   grid-template-columns: 4fr 8fr;
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+}
+.cv>section{
+  padding: 2em;
 }
 .cv-header{
-  background-color: #5a5a5a;
+  background-color: #333333;
   color: white;
   grid-area: cv-header;
 }
@@ -21,6 +31,44 @@
 .cv-main{
   grid-area: cv-main;
 }
+.cv-section{
+  margin-bottom: 2em;
+}
+.cv-h1{
+  color: inherit;
+  font-size: 2.25em;
+  text-align: left;
+}
+.cv-h2{
+  color: #333333;
+  font-size: 1.8em;
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+.cv-subheader{
+  font-size: 1.5em;
+  font-style: oblique;
+  text-align: left;
+  color: inherit;
+  text-transform: inherit;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+.cv-header-icon{
+  display: flex;
+}
+.cv-header-icon>a{
+  font-size: 1em;
+  color: inherit;
+}
+.cv-header-icon>p{
+  margin: auto 1em auto 0;
+  font-size: 1em;
+}
+.cv-header-icon>i{
+  margin: auto 1em auto 0;
+}
+
 @media print {
   header, footer{
     display: none;

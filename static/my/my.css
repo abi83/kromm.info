@@ -24,10 +24,10 @@ li{
 .link:hover {
   color: #4bbf73;
 }
-i:hover{
+.index-page-icon:hover{
   color: #4bbf73;
 }
-i{
+.index-page-icon{
   color: #55595c;
 }
 .sm-l{

@@ -18,7 +18,7 @@ b{
   margin: auto;
 }
 .cv{
-  height: 100vh;
+  /*height: 100vh;*/
   display: grid;
   grid-template-areas:
     "cv-header cv-main"

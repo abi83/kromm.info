@@ -36,6 +36,7 @@ class Job(models.Model):
     class Meta:
         verbose_name = _('Работа')
         verbose_name_plural = _('Работы')
+        ordering = ('-end_date', )
 
     def __str__(self):
         return self.name

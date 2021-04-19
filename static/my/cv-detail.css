@@ -18,12 +18,11 @@ b{
   margin: auto;
 }
 .cv{
-  /*height: 100vh;*/
   display: grid;
   grid-template-areas:
     "cv-header cv-main"
     "cv-secondary cv-main";
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 1fr 3fr;
   grid-template-columns: 4fr 8fr;
   font-family: 'Bitter', serif;
   font-size: 16px;

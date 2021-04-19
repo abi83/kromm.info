@@ -24,4 +24,4 @@ class ProjectImageTranslationOptions(TranslationOptions):
 
 @register(CV)
 class CVTranslationOptions(TranslationOptions):
-    fields = ('position', )
+    fields = ('position', 'text')

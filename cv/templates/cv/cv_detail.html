@@ -12,19 +12,33 @@
 
   <script type="text/javascript">
     window.onload = function () {
-        document.getElementById('download-button')
-            .addEventListener('click', () => {
-                const cv = this.document.querySelector('.cv');
-                var options = {
-                    margin: 0,
-                    filename: 'WladimirKromm-CV.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-                };
-                html2pdf().from(cv).set(options).save();
-            })
-}  </script>
+      document.getElementById('download-button')
+        .addEventListener('click', () => {
+          const cv = this.document.querySelector('.cv');
+          var options = {
+            margin: 0,
+            filename: 'WladimirKromm-CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+          };
+          const setFont = (size) => {
+            document.querySelector('.cv').style.fontSize = size;
+          }
+          async function go() {
+            setFont('10px');
+            await html2pdf()
+              .from(cv)
+              .set(options)
+              .save(options.filename, {returnPromise: true})
+              .then(()=>{
+                setFont('14px')
+                });
+            }
+            go();
+          })
+  }
+  </script>
 
   <button class="btn btn-primary" id="download-button">Download</button>
   <article class="cv">

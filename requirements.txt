@@ -18,7 +18,4 @@ lxml                      # via beautifulsoup
 
 django-tinymce            # HTML editor.
 
-fpdf==1.7.2
-
-xhtml2pdf~=0.2.5
 django-debug-toolbar~=3.2

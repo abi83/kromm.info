@@ -7,6 +7,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 
+  <!--html 2 pdf-->
+  <script src="{% static 'my/html2pdf.bundle.min.js' %}"></script>
+
+  <script type="text/javascript">
+    window.onload = function () {
+        document.getElementById('download-button')
+            .addEventListener('click', () => {
+                const cv = this.document.querySelector('.cv');
+                var options = {
+                    margin: 0,
+                    filename: 'WladimirKromm-CV.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                html2pdf().from(cv).set(options).save();
+            })
+}  </script>
+
+  <button class="btn btn-primary" id="download-button">Download</button>
   <article class="cv">
     <section class="cv-header">
       <h1 class="cv-h1">Кромм Владимир</h1>

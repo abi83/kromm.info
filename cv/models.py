@@ -86,6 +86,7 @@ class CV(models.Model):
     """
     A class representing one CV
     """
+    slug = models.SlugField(unique=True, max_length=25, verbose_name=_('URL слаг'))
     position = models.CharField(_('Должность'), max_length=50)
     jobs = models.ManyToManyField(Job, verbose_name=_('Опыт работы'))
     education = models.ManyToManyField(Study, verbose_name=_('Образование'))

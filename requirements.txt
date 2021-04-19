@@ -1,8 +1,8 @@
-django
+django~=3.1.4
 pytz==2020.4              # via django
 sqlparse==0.4.1           # via django
 
-django-modeltranslation
+django-modeltranslation~=0.16.1
 
 sorl-thumbnail            # images
 pillow                    # images
@@ -12,8 +12,13 @@ django-environ            #.env file manager
 psycopg2-binary           # database engine
 
 # 4 ads_maker
-requests                  # requests
-beautifulsoup4            # beautifulsoup
+requests~=2.25.1
+beautifulsoup4~=4.9.3
 lxml                      # via beautifulsoup
 
 django-tinymce            # HTML editor.
+
+fpdf==1.7.2
+
+xhtml2pdf~=0.2.5
+django-debug-toolbar~=3.2

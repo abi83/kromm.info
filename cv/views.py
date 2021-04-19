@@ -1,16 +1,12 @@
-from django.core.mail import EmailMessage
 from django.contrib import messages
-from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView
-from django.views import View
-from .models import Study, Project, CV
-from .forms import ContactForm
+from django.core.mail import EmailMessage
+from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
+from django.views import View
+from django.views.generic import ListView, DetailView
 
-
-# def study_view(request):
-#     nsu = Study.objects.get(pk=1)
-#     return render(request, 'index.html', {'uni': nsu})
+from .forms import ContactForm
+from .models import Project, CV
 
 
 def price_view(request):

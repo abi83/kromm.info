@@ -15,7 +15,7 @@ urlpatterns = [
     path('tic-tac-toe/',
          views.TicTacToe.as_view(),
          name='tic-tac-toe'),
-    path('cv/<int:pk>',
+    path('cv/<slug:slug>/',
          views.CVDetail.as_view(),
          name='cv-detail'),
     path('cv/',

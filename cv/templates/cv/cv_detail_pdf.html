@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+    <div class="cv">
+      <div class="cv-header">
+        <h1 class="cv-h1">Кромм</h1>
+        <h3 class="cv-subheader">{{ cv.position }}</h3>
+        <div class="cv-header-icon">
+          <i class="far fa-envelope"></i>
+          <a href="mailto:wladimir@kromm.info">wladimir@kromm.info</a>
+        </div>
+        <div class="cv-header-icon">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+79130073119">+7-913-007-3119</a>
+        </div>
+        <div class="cv-header-icon">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Berlin, DE</p>
+        </div>
+        <div class="cv-header-icon">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/vkromm/?locale=en_US">LinkedIn</a>
+        </div>
+        <div class="cv-header-icon">
+          <i class="fab fa-github-square"></i>
+          <a href="https://github.com/abi83">GitHub</a>
+        </div>
+      </div>
+      <div class="cv-secondary">
+{#        <div class="cv-section">#}
+          <h2 class="cv-h2">Education</h2>
+{#          {% for uni in cv.education.all %}#}
+{#            <h3 class="cv-subheader">{{ uni.name }}</h3>#}
+{#            <p class="common"><b>{{ uni.degree }}</b></p>#}
+{#            <div class="cv-header-icon">#}
+{#              <i class="far fa-calendar-alt"></i>#}
+{#              <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>#}
+{#            </div>#}
+{#          {% endfor %}#}
+{#        </div>#}
+{#        <div class="cv-section">#}
+{#          <h2 class="cv-h2">Сиклы</h2>#}
+{#          {% for skill in cv.skills.all %}#}
+{#            <p class="common">{{ skill }}</p>#}
+{#          {% endfor %}#}
+{#        </div>#}
+      </div>
+      <div class="cv-main">
+        <div class="cv-section">
+          <h2 class="cv-h2">Common</h2>
+          <p class="common">
+            laskjdfh laksjdhf lkasjh dflkjash dlkfjha slkdjfh alksjdhf lkajsdh flkja dshflkaj dhf
+            alsjdhf laksjdh flkajsdh flkjash dlfjh agdohg fakjgh kjagskjd gfakjsdgh lfaghds flhag ldsf
+            lajdgh flajdsh flakdsh flkajsdh flkjah sdlkjfha lskdjfh alkjsdh flkajsdg fkjagsh dflkjahd lkfjgh
+          </p>
+        </div>
+        <div class="cv-section">
+          <h2 class="cv-h2">Experience</h2>
+{#          {% for job in cv.jobs.all %}#}
+{#            <h3 class="cv-subheader"><b>{{ job.name }}</b></h3>#}
+{#            <p class="common"><b>{{ job.position }}</b></p>#}
+{#            <div class="cv-header-icon">#}
+{#              <i class="far fa-calendar-alt"></i>#}
+{#              <p class="common">{{ job.start_date|date:'M.Y' }} - {{ job.end_date|date:'M.Y' }}</p>#}
+{#            </div>#}
+{#            {{ job.description|safe }}#}
+{#          {% endfor %}#}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

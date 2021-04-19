@@ -3,7 +3,7 @@
   text-align: justify;
   margin-bottom: 0;
 }
-div.common p{
+div.common p, li{
   font-size: 1em;
   text-align: justify;
   margin-bottom: 0;

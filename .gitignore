@@ -133,3 +133,7 @@ dmypy.json
 .idea
 
 /media
+
+/static/django_tinymce/
+/static/modeltranslation/
+/static/tinymce/

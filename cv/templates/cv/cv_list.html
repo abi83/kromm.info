@@ -5,7 +5,7 @@
 {% block content %}
 
   {% for cv in cvs %}
-    <a href="{% url 'cv-detail' pk=cv.pk %}">{{ cv.position }}</a>
+    <a href="{% url 'cv-detail' slug=cv.slug %}">{{ cv.position }}</a>
   {% endfor %}
 
 {% endblock %}

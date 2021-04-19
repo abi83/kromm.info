@@ -26,7 +26,7 @@
             document.querySelector('.cv').style.fontSize = size;
           }
           async function go() {
-            setFont('10px');
+            setFont('11px');
             await html2pdf()
               .from(cv)
               .set(options)
@@ -41,7 +41,8 @@
   </script>
 
   <button class="btn btn-primary" id="download-button">Download</button>
-  <article class="cv">
+  <div class="cv-wrapper">
+    <article class="cv">
     <section class="cv-header">
       <h1 class="cv-h1">Кромм Владимир</h1>
       <h3 class="cv-subheader">{{ cv.position }}</h3>
@@ -103,10 +104,10 @@
             <i class="far fa-calendar-alt"></i>
             <p class="common">{{ job.start_date|date:'M.Y' }} - {{ job.end_date|date:'M.Y' }}</p>
           </div>
-          {{ job.description|safe }}
+          <div class="common">{{ job.description|safe }}</div>
         {% endfor %}
       </div>
     </section>
   </article>
-
+  </div>
 {% endblock %}

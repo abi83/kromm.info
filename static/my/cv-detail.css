@@ -3,15 +3,22 @@
   text-align: justify;
   margin-bottom: 0;
 }
+div.common p{
+  font-size: 1em;
+  text-align: justify;
+  margin-bottom: 0;
+}
 b{
   font-weight: bold;
 }
-.cv{
+.cv-wrapper{
   border: 1px inset black;
   max-width: 960px;
   width: 100%;
-  height: 100vh;
   margin: auto;
+}
+.cv{
+  height: 100vh;
   display: grid;
   grid-template-areas:
     "cv-header cv-main"

@@ -99,5 +99,29 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 //main slider auto animation
-// document.querySelectorAll('input.slider-radio')[0].checked = true
+function returnCheckedIndex(elements) {
+  let checkedIndex = 0;
+  for (let element of elements) {
+    if (element.checked) {
+      return checkedIndex
+    } else {
+      checkedIndex++
+    }
+  }
+}
+function mainSliderAnimate() {
+  let sliderTriggers = document.querySelectorAll('input.slider-radio');
+  const checkedIndex = returnCheckedIndex(sliderTriggers);
+  if (checkedIndex <2){
+    sliderTriggers.item(checkedIndex).checked = false;
+    sliderTriggers.item(checkedIndex+1).checked = true;
+  } else {
+    sliderTriggers.item(checkedIndex).checked = false;
+    sliderTriggers.item(0).checked = true;
+  }
+}
 
+setInterval(()=> {
+  mainSliderAnimate();
+  showNextProject();
+}, 3500)

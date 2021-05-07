@@ -333,23 +333,23 @@ nav ul li a{
   top: 301px;
 }
 .bg1{
-  background-image: url(/img/001.jpg);
+  background-image: url(/static/ap/img/001.jpg);
   background-size: cover;
 }
 .bg2{
-  background-image: url(/img/002.jpg);
+  background-image: url(/static/ap/img/002.jpg);
   background-size: cover;
 }
 .bg3{
-  background-image: url(/img/003.jpg);
+  background-image: url(/static/ap/img/003.jpg);
   background-size: cover;
 }
 .bg4{
-  background-image: url(/img/004.jpg);
+  background-image: url(/static/ap/img/004.jpg);
   background-size: cover;
 }
 .bg5{
-  background-image: url(/img/005.jpg);
+  background-image: url(/static/ap/img/005.jpg);
   background-size: cover;
 }
 .main-header{

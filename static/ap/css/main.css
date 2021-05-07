@@ -38,6 +38,7 @@ footer{
   flex: 1;
   font-size: 2rem;
   margin: 0;
+  /*color: white;*/
 }
 .logo {
   flex: 1;
@@ -45,11 +46,15 @@ footer{
   height: 85px;
   object-fit: contain;
 }
+main{
+  /*margin-top: 10vh;*/
+}
 .nav-menu{
   flex: 5;
 }
 .navbar{
-  background-color: var(--light);
+  /*background-color: var(--light);*/
+  color: white;
   position: fixed;
   top: 0;
   height: 10vh;
@@ -61,7 +66,12 @@ footer{
   align-items: center;
   box-sizing: border-box;
   z-index: 2;
-  padding: 0 3%;
+  padding: 0 40px;
+  transition: all 400ms;
+}
+.navbar-modified{
+  background-color: var(--light);
+  color: inherit;
 }
 nav{
   text-align: right;
@@ -73,7 +83,8 @@ nav ul li{
 }
 nav ul li a{
   text-decoration: none;
-  color: var(--alternate-color);
+  color: inherit;
+  /*color: white;*/
 }
 .loader {
   font-size: 10px;
@@ -126,9 +137,6 @@ nav ul li a{
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-main{
-  margin-top: 10vh;
 }
 .row{
   width: 100%;
@@ -189,7 +197,8 @@ main{
 .slider-text{
   text-align: left;
   color: white;
-  padding: 3%;
+  /*padding: 3%;*/
+  padding: 40px;
 }
 .slider-cover{
   height: 100%;
@@ -216,7 +225,7 @@ main{
   border: solid 2px white;
   border-radius: 999px;
   background-color: transparent;
-  margin: 85vh 6px 5vh 6px;
+  margin: 95vh 6px 5vh 6px;
   position: relative;
   z-index: 3;
   cursor: pointer;
@@ -324,30 +333,30 @@ main{
   top: 301px;
 }
 .bg1{
-  background-image: url(/static/ap/img/001.jpg);
+  background-image: url(/img/001.jpg);
   background-size: cover;
 }
 .bg2{
-  background-image: url(/static/ap/img/002.jpg);
+  background-image: url(/img/002.jpg);
   background-size: cover;
 }
 .bg3{
-  background-image: url(/static/ap/img/003.jpg);
+  background-image: url(/img/003.jpg);
   background-size: cover;
 }
 .bg4{
-  background-image: url(/static/ap/img/004.jpg);
+  background-image: url(/img/004.jpg);
   background-size: cover;
 }
 .bg5{
-  background-image: url(/static/ap/img/005.jpg);
+  background-image: url(/img/005.jpg);
   background-size: cover;
 }
 .main-header{
   font-weight: 700;
   font-size: 3rem;
   text-transform: uppercase;
-  margin-bottom: 3rem;
+  margin: 15vh 0 3rem 0;
   line-height: 1.2em;
   color: var(--yellow);
 }

@@ -63,23 +63,36 @@ document.querySelector('#next-project-button')
 
 
 ///animate on scroll
-let observer = new IntersectionObserver(function(entries) {
+let productGridObserver = new IntersectionObserver(function(entries) {
   if(entries[0].isIntersecting === true) {
     for (let entry of entries){
       entry.target.classList.add('product-grid-item-scroll');
-      // console.log(entry.target)
     }
   } else {
     for (let entry of entries){
       entry.target.classList.remove('product-grid-item-scroll');
-      // console.log(entry.target)
     }
   }
 }, { threshold: [0.5] });
 
 for (let el of document.querySelectorAll('.product-grid-item')){
-  observer.observe(el);
+  productGridObserver.observe(el);
 }
+
+let secondScreenObserver = new IntersectionObserver(function(entries) {
+  if (entries[0].isIntersecting === true) {
+    document.querySelector('main').style.marginTop = '0';
+    document.querySelector('.navbar').classList.remove('navbar-modified');
+    console.log('first screen')
+  } else {
+    console.log('not first screen')
+    document.querySelector('main').style.marginTop = '10xh';
+    document.querySelector('.navbar').classList.add('navbar-modified');
+    
+  }
+}, {threshold: [0.75]})
+
+secondScreenObserver.observe(document.querySelector('#first-screen'))
 
 
 //accordion animation
@@ -90,11 +103,6 @@ for (let i = 0; i < acc.length; i++) {
         this.classList.toggle("accordion-active");
         let panel = this.nextElementSibling;
         panel.classList.toggle("panel-active");
-        // if (panel.style.display === "block") {
-        //     panel.style.display = "none";
-        // } else {
-        //     panel.style.display = "block";
-        // }
     });
 }
 

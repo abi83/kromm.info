@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="/static/ap/css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -18,7 +18,7 @@
   <header>
     <div class="navbar">
       <p class="brand">АКВА ПРОМ</p>
-      <img class="logo" src="/static/ap/img/logo-sm.png" height="100%">
+      <img class="logo" src="/img/logo-sm.png" height="100%">
       <nav class="nav-menu">
         <ul>
           <li><a href="#">КОМПАНИЯ</a></li>
@@ -30,21 +30,23 @@
   </header>
   <main>
     <!-- first screen-->
-    <section>
+    <section id="first-screen">
       <div class="slider-container">
         <div class="slider-cover">
-          <div class="slider-text row">
+          <div class="row">
             <div class="cl-6">
-              <h1 class="main-header">Проектирование - Комплектация - Поставка</h1>
-              <p class="lead">
-                Компания «Аква-Пром» уже несколько лет является надежным поставщиком материалов на рынке Сибири.
-                Мы способны комплексно и в короткие сроки обеспечить объекты для строительства наружных сетей водоснабжения и
-                водоотведения из самых современных материалов – полиэтиленовые и полипропиленовые трубы, весь спектр деталей для
-                монтажа, сварочное оборудование, запорная арматура, колодезная арматура и пр.
-              </p>
-              <hr class="hr-small" style="margin-left: 0;">
-              <button class="btn btn-main">Позвонить</button>
-              <button class="btn btn-secondary">Отправить</button>
+              <div class="slider-text">
+                <h1 class="main-header">Проектирование - Комплектация - Поставка</h1>
+                <p class="lead">
+                  Компания «Аква-Пром» уже несколько лет является надежным поставщиком материалов на рынке Сибири.
+                  Мы способны комплексно и в короткие сроки обеспечить объекты для строительства наружных сетей водоснабжения и
+                  водоотведения из самых современных материалов – полиэтиленовые и полипропиленовые трубы, весь спектр деталей для
+                  монтажа, сварочное оборудование, запорная арматура, колодезная арматура и пр.
+                </p>
+                <hr class="hr-small" style="margin-left: 0;">
+                <button class="btn btn-main">Позвонить</button>
+                <button class="btn btn-secondary">Отправить</button>
+              </div>
             </div>
             <div class="cl-6"> </div>
           </div>
@@ -66,13 +68,13 @@
     <section>
       <div class="row h2-container">
         <h2 class="h2-text  cl-9">О компании</h2>
-        <p class="lead cl-9 t-center">Вместе с вами с 1998 года</p>
+        <p class="lead cl-9 t-center">Вместе с вами с 1998 год</p>
         <hr class="hr-small">
       </div>
       <div class="container">
         <div class="row">
         <div class="cl-5">
-          <img src="/static/ap/img/director.jpg" alt="Директор" style="max-width:100%; max-height:100%;">
+          <img src="/img/director.jpg" alt="Директор" style="max-width:100%; max-height:100%;">
         </div>
         <div class="cl-7">
           Компания «Аква-Пром» отдает предпочтение современным материалам от ведущих производителей:
@@ -215,13 +217,13 @@
         <div class="cl-6">
           <div class="project-container">
             <div class="prj-image">
-              <img src="/static/ap/img/001.jpg" height="300px;" alt="">
+              <img src="/img/001.jpg" height="300px;" alt="">
             </div>
             <div class="prj-image prj-hidden">
-              <img src="/static/ap/img/002.jpg" height="300px;" alt="">
+              <img src="/img/002.jpg" height="300px;" alt="">
             </div>
             <div class="prj-image prj-hidden">
-              <img src="/static/ap/img/003.jpg" height="300px;" alt="">
+              <img src="/img/003.jpg" height="300px;" alt="">
             </div>
           </div>
         </div>
@@ -303,6 +305,6 @@
     </div>
   </footer>
   <script src="https://unpkg.com/vue@next"></script>
-  <script src="/static/ap/js/front_app.js"></script>
+  <script src="/js/front_app.js"></script>
 </body>
 </html>

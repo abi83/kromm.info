@@ -48,6 +48,9 @@ class Skill(models.Model):
     rank = models.IntegerField(_('Уровень'), validators=[MinValueValidator(1), MaxValueValidator(5)])
     description = models.CharField(_('Описание'), max_length=127)
 
+    class Meta:
+        ordering = ('-rank', )
+
     def __str__(self):
         return self.name
 

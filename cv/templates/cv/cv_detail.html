@@ -78,9 +78,9 @@
         <noscript><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"></noscript>
         <h2 class="cv-h2">Скилы</h2>
         {% for skill in cv.skills.all %}
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between mt-4">
             <div>
-              <h4 class="mb-0">{{ skill }}</h4>
+              <p class="common"><b>{{ skill }}</b></p>
             </div>
             <div>
               {% for rank in '12345'|make_list %}

@@ -63,17 +63,6 @@
     </section>
     <section class="cv-secondary">
       <div class="cv-section">
-        <h2 class="cv-h2">Образование</h2>
-        {% for uni in cv.education.all %}
-          <h3 class="cv-subheader">{{ uni.name }}</h3>
-          <p class="common"><b>{{ uni.degree }}</b></p>
-          <div class="cv-header-icon">
-            <i class="far fa-calendar-alt"></i>
-            <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>
-          </div>
-        {% endfor %}
-      </div>
-      <div class="cv-section">
         <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"></noscript>
         <h2 class="cv-h2">Скилы</h2>
@@ -137,6 +126,18 @@
         <p class="common">
           {{ cv.text }}
         </p>
+      </div>
+      <div class="cv-section">
+        <h2 class="cv-h2">Образование</h2>
+        {% for uni in cv.education.all %}
+          <h3 class="cv-subheader">{{ uni.name }}</h3>
+          <p class="common"><b>{{ uni.degree }}</b></p>
+          <div class="cv-header-icon">
+            <i class="far fa-calendar-alt"></i>
+            <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>
+          </div>
+          <div class="common">{{ uni.description|safe }}</div>
+        {% endfor %}
       </div>
       <div class="cv-section">
         <h2 class="cv-h2">Опыт работы</h2>

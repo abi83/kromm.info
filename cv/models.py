@@ -19,6 +19,7 @@ class Study(models.Model):
         return self.name
 
     class Meta:
+        ordering = ('end_date', )
         verbose_name = _('Учеба')
         verbose_name_plural = _('Учебы')
 
@@ -44,7 +45,7 @@ class Job(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(_('Скилл'), max_length=25)
-    rank = models.IntegerField(_('Уровень'), validators=[MinValueValidator(0), MaxValueValidator(10)])
+    rank = models.IntegerField(_('Уровень'), validators=[MinValueValidator(1), MaxValueValidator(5)])
     description = models.CharField(_('Описание'), max_length=127)
 
     def __str__(self):

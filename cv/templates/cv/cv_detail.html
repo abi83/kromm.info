@@ -54,11 +54,11 @@
       </div>
       <div class="cv-header-icon">
         <i class="fab fa-linkedin"></i>
-        <a href="https://www.linkedin.com/in/vkromm/?locale=en_US">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/vkromm/?locale=en_US">LinkedIn.com/in/vkromm/</a>
       </div>
       <div class="cv-header-icon">
         <i class="fab fa-github-square"></i>
-        <a href="https://github.com/abi83">GitHub</a>
+        <a href="https://github.com/abi83">GitHub.com/abi83</a>
       </div>
     </section>
     <section class="cv-secondary">
@@ -74,15 +74,66 @@
         {% endfor %}
       </div>
       <div class="cv-section">
+        <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"></noscript>
         <h2 class="cv-h2">Скилы</h2>
         {% for skill in cv.skills.all %}
-          <p class="common">{{ skill }}</p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <h4 class="mb-0">{{ skill }}</h4>
+            </div>
+            <div>
+              {% for rank in '12345'|make_list %}
+                {% if rank <= skill.rank|slugify %}
+                  <i class="fas fa-star"></i>
+                {% else %}
+                  <i class="far fa-star"></i>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <p class="common">{{ skill.description }}</p>
         {% endfor %}
+      </div>
+      <div class="cv-section">
+        <h2 class="cv-h2">Обо мне</h2>
+        <div class="row mb-4">
+          <div class="col-3">
+            <i class="fas fa-basketball-ball fa-3x"></i>
+          </div>
+          <div class="col-9">
+            <p class="common">Люблю баскетбол и Евролигу</p>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-3">
+            <i class="fas fa-skiing fa-3x"></i>
+          </div>
+          <div class="col-9">
+            <p class="common">Хорошо катаюсь на горных лыжах</p>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-3">
+            <i class="far fa-snowflake fa-3x"></i>
+          </div>
+          <div class="col-9">
+            <p class="common">20 лет прожил в Сибири, поэтому не боюсь трудностей</p>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-3">
+            <i class="fas fa-child fa-3x"></i>
+          </div>
+          <div class="col-9">
+            <p class="common">У меня трое детей. И я их очень люблю</p>
+          </div>
+        </div>
       </div>
     </section>
     <section class="cv-main">
       <div class="cv-section">
-        <h2 class="cv-h2">Обо мне</h2>
+        <h2 class="cv-h2">Кратко</h2>
         <p class="common">
           {{ cv.text }}
         </p>

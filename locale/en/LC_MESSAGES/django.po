@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-29 17:46+0700\n"
+"POT-Creation-Date: 2021-05-29 17:58+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,6 +121,22 @@ msgstr "Skills"
 #: .\cv\templates\cv\cv_detail.html:88
 msgid "Обо мне"
 msgstr "About"
+
+#: .\cv\templates\cv\cv_detail.html:94
+msgid "Люблю баскетбол и Евролигу"
+msgstr "I love basketball and EuroLeague"
+
+#: .\cv\templates\cv\cv_detail.html:102
+msgid "Хорошо катаюсь на горных лыжах"
+msgstr "I ski well"
+
+#: .\cv\templates\cv\cv_detail.html:110
+msgid "20 лет прожил в Сибири, поэтому не боюсь трудностей"
+msgstr "I've lived in Siberia for 20 years. Difficulties? I'm not afraid."
+
+#: .\cv\templates\cv\cv_detail.html:118
+msgid "У меня трое детей. И я их очень люблю"
+msgstr "I have three children. And I love them very much"
 
 #: .\cv\templates\cv\cv_detail.html:125
 msgid "Кратко"

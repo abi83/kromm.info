@@ -19,7 +19,7 @@ class Study(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('end_date', )
+        ordering = ('start_date', )
         verbose_name = _('Учеба')
         verbose_name_plural = _('Учебы')
 

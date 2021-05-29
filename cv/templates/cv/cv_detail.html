@@ -151,6 +151,19 @@
           <div class="common">{{ job.description|safe }}</div>
         {% endfor %}
       </div>
+      <div class="cv-section">
+        <h2 class="cv-h2">{% trans "Мои проекты" %}</h2>
+        {% for project in cv.projects.all %}
+          <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>
+          <p class="common">{{ project.short_desc }}</p>
+          <p class="common"><b>{{ project.role }}</b></p>
+          <div class="cv-header-icon">
+            <i class="far fa-calendar-alt"></i>
+            <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>
+          </div>
+          <div class="common">{{ description.description|safe }}</div>
+        {% endfor %}
+      </div>
     </section>
   </article>
   </div>

@@ -43,6 +43,7 @@ b{
 }
 .cv-section{
   margin-bottom: 2.5em;
+  break-inside: avoid;
 }
 .cv-h1{
   color: inherit;

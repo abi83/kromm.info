@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 22:42+0700\n"
+"POT-Creation-Date: 2021-05-29 17:32+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,9 @@ msgstr "Telefonnummer"
 msgid ""
 "От 7 до 25 знаков. Допускаются цифры, скобки (), пробелы и знаки + и -. "
 "Можно оставить пустым."
-msgstr "7 bis 25 Zeichen. Zahlen, Klammern (), Leerzeichen und Zeichen + und - sind zulässig. Kann leer gelassen werden."
+msgstr ""
+"7 bis 25 Zeichen. Zahlen, Klammern (), Leerzeichen und Zeichen + und - sind "
+"zulässig. Kann leer gelassen werden."
 
 #: .\cv\forms.py:53
 msgid "Почтовый адрес"
@@ -52,28 +54,101 @@ msgstr "Postanschrift"
 msgid "Сообщение"
 msgstr "die Nachricht"
 
-#: .\cv\views.py:22
+#: .\cv\models.py:12 .\cv\models.py:23
+msgid "Учеба"
+msgstr "Kurs"
+
+#: .\cv\models.py:24
+msgid "Учебы"
+msgstr "Kurse"
+
+#: .\cv\models.py:31 .\cv\models.py:38
+msgid "Работа"
+msgstr "Job"
+
+#: .\cv\models.py:39
+msgid "Работы"
+msgstr "Arbeit"
+
+#: .\cv\models.py:47
+#, fuzzy
+#| msgid "Скилы"
+msgid "Скилл"
+msgstr "Kompetenzen"
+
+#: .\cv\models.py:48
+msgid "Уровень"
+msgstr "Niveau"
+
+#: .\cv\models.py:49
+msgid "Описание"
+msgstr "Beschreibung"
+
+#: .\cv\models.py:94
+msgid "URL слаг"
+msgstr "URL slug"
+
+#: .\cv\models.py:95
+msgid "Должность"
+msgstr "Position"
+
+#: .\cv\models.py:97 .\cv\templates\cv\cv_detail.html:143
+msgid "Опыт работы"
+msgstr "Berufserfahrung"
+
+#: .\cv\models.py:98 .\cv\templates\cv\cv_detail.html:131
+msgid "Образование"
+msgstr "Bildung"
+
+#: .\cv\models.py:99
+#, fuzzy
+#| msgid "Скилы"
+msgid "Скиллы"
+msgstr "Kompetenzen"
+
+#: .\cv\models.py:100 .\templates\index_page.html:237
+msgid "Мои проекты"
+msgstr "Meine Projekte"
+
+#: .\cv\templates\cv\cv_detail.html:41
+msgid "Кромм Владимир"
+msgstr "Kromm Wladimir"
+
+#: .\cv\templates\cv\cv_detail.html:68 .\templates\index_page.html:121
+msgid "Скилы"
+msgstr "Kompetenzen"
+
+#: .\cv\templates\cv\cv_detail.html:88
+msgid "Обо мне"
+msgstr "Über mich"
+
+#: .\cv\templates\cv\cv_detail.html:125
+msgid "Кратко"
+msgstr "Profil"
+
+#: .\cv\views.py:18
 msgid "Сообщение не было отправлено. В форме есть ошибки."
 msgstr "Die Nachricht wurde nicht gesendet. Das Formular enthält Fehler."
 
-#: .\cv\views.py:56
+#: .\cv\views.py:52
 msgid ""
 "Сообщение не было отправлено. В <a href=\"#contact-form\"class=\"alert-link"
 "\">форме</a> есть ошибки."
-msgstr "Die Nachricht wurde nicht gesendet. Das <a href=\"#contact-form\"class=\"alert-link"
-"\">Formular</a> enthält Fehler."
+msgstr ""
+"Die Nachricht wurde nicht gesendet. Das <a href=\"#contact-form\"class="
+"\"alert-link\">Formular</a> enthält Fehler."
+
+#: .\djanger\settings.py:149
+msgid "Russia"
+msgstr "Russland"
+
+#: .\djanger\settings.py:150
+msgid "English"
+msgstr "Englisch"
 
 #: .\djanger\settings.py:151
-msgid "Russia"
-msgstr ""
-
-#: .\djanger\settings.py:152
-msgid "English"
-msgstr ""
-
-#: .\djanger\settings.py:153
 msgid "Germanya"
-msgstr ""
+msgstr "Deutschland"
 
 #: .\templates\form.html:84
 msgid "Отправить"
@@ -88,13 +163,18 @@ msgid ""
 "У меня математическое и финансовое высшее образование, я 15 лет проработал "
 "ТОП-менеджером в рекламном агентстве, а теперь я разрабатываю веб "
 "приложения, и сайты со сложной бизнес логикой."
-msgstr "Ich habe eine höhere Ausbildung in Mathematik und Finanzen, habe 15 Jahre als Top-Manager in einer Werbeagentur gearbeitet und entwickle jetzt Webanwendungen und Websites mit komplexer Geschäftslogik."
+msgstr ""
+"Ich habe eine höhere Ausbildung in Mathematik und Finanzen, habe 15 Jahre "
+"als Top-Manager in einer Werbeagentur gearbeitet und entwickle jetzt "
+"Webanwendungen und Websites mit komplexer Geschäftslogik."
 
 #: .\templates\index_page.html:19
 msgid ""
 "Повысить эффективность ваших продаж, маркетинга и бизнеса через IT решения - "
 "моя работа."
-msgstr "Es ist meine Aufgabe, die Effizienz Ihres Vertriebs, Marketings und Geschäfts durch IT-Lösungen zu verbessern."
+msgstr ""
+"Es ist meine Aufgabe, die Effizienz Ihres Vertriebs, Marketings und "
+"Geschäfts durch IT-Lösungen zu verbessern."
 
 #: .\templates\index_page.html:22
 msgid "Напишите мне"
@@ -129,7 +209,10 @@ msgid ""
 "Разобраться в проблеме, найти подходящий инструмент для решения, выделить "
 "несколько простых задач, отбросить лишнее и получить результат. Это мое "
 "любимое."
-msgstr "Verstehen Sie das Problem, finden Sie das richtige Werkzeug für die Lösung, markieren Sie einige einfache Aufgaben, verwerfen Sie das Unnötige und erhalten Sie das Ergebnis. Das ist mein Lieblings."
+msgstr ""
+"Verstehen Sie das Problem, finden Sie das richtige Werkzeug für die Lösung, "
+"markieren Sie einige einfache Aufgaben, verwerfen Sie das Unnötige und "
+"erhalten Sie das Ergebnis. Das ist mein Lieblings."
 
 #: .\templates\index_page.html:89
 msgid "Результат - важен. Остальное вторично."
@@ -140,22 +223,26 @@ msgid ""
 "Чистый код, покрытие тестами и детальное проектирование - важны. Но "
 "экономический результат - важнее. Приложение, работающее с ошибками - лучше, "
 "чем хорошо задокументированный и покрытый тестами прототип."
-msgstr "Sauberer Code, Testabdeckung und detailliertes Design sind wichtig. Das wirtschaftliche Ergebnis ist jedoch wichtiger. Eine Buggy-App ist besser als ein gut dokumentierter und testbedeckter Prototyp."
+msgstr ""
+"Sauberer Code, Testabdeckung und detailliertes Design sind wichtig. Das "
+"wirtschaftliche Ergebnis ist jedoch wichtiger. Eine Buggy-App ist besser als "
+"ein gut dokumentierter und testbedeckter Prototyp."
 
 #: .\templates\index_page.html:99
 msgid "Программист это не про код, а про смыслы."
-msgstr "Beim Programmierer geht es nicht um den Code, sondern um die Bedeutungen."
+msgstr ""
+"Beim Programmierer geht es nicht um den Code, sondern um die Bedeutungen."
 
 #: .\templates\index_page.html:103
 msgid ""
 "Показатели монетизации, конверсии и дохода на одного пользователя - вокруг "
 "этого должна строиться разработка. Не следовать мыслям пользователя, а "
 "опережать их. А нужные библиотеки подключим быстро."
-msgstr "Darauf aufbauend sollten Metriken für Monetarisierung, Conversion und Umsatz pro Benutzer aufgebaut werden. Folgen Sie nicht den Gedanken des Benutzers, sondern gehen Sie ihnen voraus. Und wir werden die notwendigen Bibliotheken schnell verbinden."
-
-#: .\templates\index_page.html:121
-msgid "Скилы"
-msgstr "Kompetenzen"
+msgstr ""
+"Darauf aufbauend sollten Metriken für Monetarisierung, Conversion und Umsatz "
+"pro Benutzer aufgebaut werden. Folgen Sie nicht den Gedanken des Benutzers, "
+"sondern gehen Sie ihnen voraus. Und wir werden die notwendigen Bibliotheken "
+"schnell verbinden."
 
 #: .\templates\index_page.html:164
 msgid "Инструменты"
@@ -164,10 +251,6 @@ msgstr "Werkzeuge"
 #: .\templates\index_page.html:201
 msgid "Библиотеки"
 msgstr "Bibliotheken"
-
-#: .\templates\index_page.html:237
-msgid "Мои проекты"
-msgstr "Meine Projekte"
 
 #: .\templates\index_page.html:262
 msgid "Подробнее"

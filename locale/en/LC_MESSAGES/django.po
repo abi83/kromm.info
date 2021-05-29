@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 22:13+0700\n"
+"POT-Creation-Date: 2021-05-29 17:46+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,138 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\cv\forms.py:17
+msgid "В телефоне должно быть от 7 до 12 цифр"
+msgstr "From 7 to 12 digits in phone number"
+
+#: .\cv\forms.py:21
+msgid "Имя"
+msgstr "First name"
+
+#: .\cv\forms.py:26
+msgid "Фамилия"
+msgstr "Last name"
+
+#: .\cv\forms.py:35
+msgid "Введите корректный е-мейл"
+msgstr "Enter valid email"
+
+#: .\cv\forms.py:41
+msgid "Телефон"
+msgstr "Phone"
+
+#: .\cv\forms.py:45
+msgid ""
+"От 7 до 25 знаков. Допускаются цифры, скобки (), пробелы и знаки + и -. "
+"Можно оставить пустым."
+msgstr ""
+"From 7 to 25 characters. Numbers, brackets (), spaces, + and - characters "
+"allowed. Can be blank."
+
+#: .\cv\forms.py:53
+msgid "Почтовый адрес"
+msgstr "Mailing address"
+
+#: .\cv\forms.py:59
+msgid "Сообщение"
+msgstr "Message"
+
+#: .\cv\models.py:12 .\cv\models.py:23
+msgid "Учеба"
+msgstr "Study"
+
+#: .\cv\models.py:24
+msgid "Учебы"
+msgstr "Studies"
+
+#: .\cv\models.py:31 .\cv\models.py:38
+msgid "Работа"
+msgstr "Job"
+
+#: .\cv\models.py:39
+msgid "Работы"
+msgstr "Jobs"
+
+#: .\cv\models.py:47
+#, fuzzy
+#| msgid "Скилы"
+msgid "Скилл"
+msgstr "Skills"
+
+#: .\cv\models.py:48
+msgid "Уровень"
+msgstr "Level"
+
+#: .\cv\models.py:49
+msgid "Описание"
+msgstr "Description"
+
+#: .\cv\models.py:94
+msgid "URL слаг"
+msgstr "URL slug"
+
+#: .\cv\models.py:95
+msgid "Должность"
+msgstr "Position"
+
+#: .\cv\models.py:97 .\cv\templates\cv\cv_detail.html:143
+msgid "Опыт работы"
+msgstr "Experience"
+
+#: .\cv\models.py:98 .\cv\templates\cv\cv_detail.html:131
+msgid "Образование"
+msgstr "Education"
+
+#: .\cv\models.py:99
+#, fuzzy
+#| msgid "Скилы"
+msgid "Скиллы"
+msgstr "Skills"
+
+#: .\cv\models.py:100 .\templates\index_page.html:237
+msgid "Мои проекты"
+msgstr "My projects"
+
+#: .\cv\templates\cv\cv_detail.html:41
+msgid "Кромм Владимир"
+msgstr "Kromm Wladimir"
+
+#: .\cv\templates\cv\cv_detail.html:68 .\templates\index_page.html:121
+msgid "Скилы"
+msgstr "Skills"
+
+#: .\cv\templates\cv\cv_detail.html:88
+msgid "Обо мне"
+msgstr "About"
+
+#: .\cv\templates\cv\cv_detail.html:125
+msgid "Кратко"
+msgstr "Profile"
+
+#: .\cv\views.py:18
+msgid "Сообщение не было отправлено. В форме есть ошибки."
+msgstr "Errors in form. The message was not send."
+
+#: .\cv\views.py:52
+msgid ""
+"Сообщение не было отправлено. В <a href=\"#contact-form\"class=\"alert-link"
+"\">форме</a> есть ошибки."
+msgstr ""
+"Errors in <a href=\"#contact-form\"class=\"alert-link\">form</a>. The "
+"message was not send"
+
+#: .\djanger\settings.py:149
+msgid "Russia"
+msgstr "Russia"
+
+#: .\djanger\settings.py:150
+msgid "English"
+msgstr "English"
+
+#: .\djanger\settings.py:151
+msgid "Germanya"
+msgstr "Germany"
 
 #: .\templates\form.html:84
 msgid "Отправить"
@@ -110,10 +242,6 @@ msgstr ""
 "should be built around this. Don't follow the user's thoughts, but get ahead "
 "of them. And we will install the necessary libraries quickly."
 
-#: .\templates\index_page.html:121
-msgid "Скилы"
-msgstr "Skills"
-
 #: .\templates\index_page.html:164
 msgid "Инструменты"
 msgstr "Tools"
@@ -121,10 +249,6 @@ msgstr "Tools"
 #: .\templates\index_page.html:201
 msgid "Библиотеки"
 msgstr "Libs"
-
-#: .\templates\index_page.html:237
-msgid "Мои проекты"
-msgstr "My projects"
 
 #: .\templates\index_page.html:262
 msgid "Подробнее"
@@ -141,41 +265,3 @@ msgstr "Prices"
 #: .\templates\navbar.html:37
 msgid "Приложения"
 msgstr "Applications"
-
-msgid "В телефоне должно быть от 7 до 12 цифр"
-msgstr "From 7 to 12 digits in phone number"
-
-msgid "Имя"
-msgstr "First name"
-
-msgid "Фамилия"
-msgstr "Last name"
-
-msgid "Введите корректный е-мейл"
-msgstr "Enter valid email"
-
-msgid "Телефон"
-msgstr "Phone"
-
-msgid ""
-"От 7 до 25 знаков. Допускаются цифры, скобки (), пробелы и знаки + и -. "
-"Можно оставить пустым."
-msgstr ""
-"From 7 to 25 characters. Numbers, brackets (), spaces, + and - characters "
-"allowed. Can be blank."
-
-msgid "Почтовый адрес"
-msgstr "Mailing address"
-
-msgid "Сообщение"
-msgstr "Message"
-
-msgid "Сообщение не было отправлено. В форме есть ошибки."
-msgstr "Errors in form. The message was not send."
-
-msgid ""
-"Сообщение не было отправлено. В <a href=\"#contact-form\"class=\"alert-"
-"link\">форме</a> есть ошибки."
-msgstr ""
-"Errors in <a href=\"#contact-form\"class=\"alert-link\">form</a>. "
-"The message was not send"

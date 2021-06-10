@@ -37,6 +37,9 @@
   <button class="btn btn-primary" id="download-button">Download</button>
   <div class="cv-wrapper">
     <article class="cv">
+    <section class="cv-image">
+      <img src="{% static 'foto.png' %}" alt='Kromm Wladimir ' width="100%">
+    </section>
     <section class="cv-header">
       <h1 class="cv-h1">{% trans "Кромм Владимир" %}</h1>
       <h3 class="cv-subheader">{{ cv.position }}</h3>
@@ -156,12 +159,12 @@
         {% for project in cv.projects.all %}
           <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>
           <p class="common">{{ project.short_desc }}</p>
-          <p class="common"><b>{{ project.role }}</b></p>
+          <p class="common"><b>Role: </b>{{ project.role }}</p>
           <div class="cv-header-icon">
             <i class="far fa-calendar-alt"></i>
             <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>
           </div>
-          <div class="common">{{ description.description|safe }}</div>
+          <div class="common">{{ project.description|safe }}</div>
         {% endfor %}
       </div>
     </section>

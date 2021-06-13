@@ -37,137 +37,144 @@
   <button class="btn btn-primary" id="download-button">Download</button>
   <div class="cv-wrapper">
     <article class="cv">
-    <section class="cv-image">
-      <img src="{% static 'foto.png' %}" alt='Kromm Wladimir ' width="100%">
-    </section>
-    <section class="cv-header">
-      <h1 class="cv-h1">{% trans "Кромм Владимир" %}</h1>
-      <h3 class="cv-subheader">{{ cv.position }}</h3>
-      <div class="cv-header-icon">
-        <i class="far fa-envelope"></i>
-        <a href="mailto:wladimir@kromm.info">wladimir@kromm.info</a>
-      </div>
-      <div class="cv-header-icon">
-        <i class="fas fa-phone"></i>
-        <a href="tel:+79130073119">+7-913-007-3119</a>
-      </div>
-      <div class="cv-header-icon">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>Berlin, DE</p>
-      </div>
-      <div class="cv-header-icon">
-        <i class="fab fa-linkedin"></i>
-        <a href="https://www.linkedin.com/in/vkromm/?locale=en_US">LinkedIn.com/in/vkromm/</a>
-      </div>
-      <div class="cv-header-icon">
-        <i class="fab fa-github-square"></i>
-        <a href="https://github.com/abi83">GitHub.com/abi83</a>
-      </div>
-    </section>
-    <section class="cv-secondary">
-      <div class="cv-section">
-        <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"></noscript>
-        <h2 class="cv-h2">{% trans "Скилы" %}</h2>
-        {% for skill in cv.skills.all %}
-          <div class="d-flex justify-content-between mt-4">
-            <div>
-              <p class="common"><b>{{ skill }}</b></p>
+    <div class="row">
+      <div class="col-4">
+        <img src="{% static 'foto.png' %}" alt='Kromm Wladimir ' width="100%">
+        <div class="cv-section">
+          <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
+          <noscript><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"></noscript>
+          <h2 class="cv-h2">{% trans "Скилы" %}</h2>
+          {% for skill in cv.skills.all %}
+            <div class="d-flex justify-content-between mt-4">
+              <div>
+                <p class="common"><b>{{ skill }}</b></p>
+              </div>
+              <div>
+                {% for rank in '12345'|make_list %}
+                  {% if rank <= skill.rank|slugify %}
+                    <i class="fas fa-star"></i>
+                  {% else %}
+                    <i class="far fa-star"></i>
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
-            <div>
-              {% for rank in '12345'|make_list %}
-                {% if rank <= skill.rank|slugify %}
-                  <i class="fas fa-star"></i>
-                {% else %}
-                  <i class="far fa-star"></i>
-                {% endif %}
-              {% endfor %}
+            <p class="common">{{ skill.description }}</p>
+          {% endfor %}
+        </div>
+        <div class="cv-section">
+          <h2 class="cv-h2">{% trans "Обо мне" %}</h2>
+          <div class="row mb-4">
+            <div class="col-3">
+              <i class="fas fa-basketball-ball fa-3x"></i>
+            </div>
+            <div class="col-9">
+              <p class="common">{% trans 'Люблю баскетбол и Евролигу' %}</p>
             </div>
           </div>
-          <p class="common">{{ skill.description }}</p>
-        {% endfor %}
+          <div class="row mb-4">
+            <div class="col-3">
+              <i class="fas fa-skiing fa-3x"></i>
+            </div>
+            <div class="col-9">
+              <p class="common">{% trans 'Хорошо катаюсь на горных лыжах' %}</p>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-3">
+              <i class="far fa-snowflake fa-3x"></i>
+            </div>
+            <div class="col-9">
+              <p class="common">{% trans '20 лет прожил в Сибири, поэтому не боюсь трудностей' %}</p>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-3">
+              <i class="fas fa-child fa-3x"></i>
+            </div>
+            <div class="col-9">
+              <p class="common">{% trans 'У меня трое детей. И я их очень люблю' %}</p>
+            </div>
+          </div>
+        </div>
+{#        <div class="cv-section">#}
+{#          <h2 class="cv-h2">{% trans "Languages" %}</h2>#}
+{#          <p class="common">DE German</p>#}
+{#        </div>#}
       </div>
-      <div class="cv-section">
-        <h2 class="cv-h2">{% trans "Обо мне" %}</h2>
-        <div class="row mb-4">
-          <div class="col-3">
-            <i class="fas fa-basketball-ball fa-3x"></i>
-          </div>
-          <div class="col-9">
-            <p class="common">{% trans 'Люблю баскетбол и Евролигу' %}</p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-3">
-            <i class="fas fa-skiing fa-3x"></i>
-          </div>
-          <div class="col-9">
-            <p class="common">{% trans 'Хорошо катаюсь на горных лыжах' %}</p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-3">
-            <i class="far fa-snowflake fa-3x"></i>
-          </div>
-          <div class="col-9">
-            <p class="common">{% trans '20 лет прожил в Сибири, поэтому не боюсь трудностей' %}</p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-3">
-            <i class="fas fa-child fa-3x"></i>
-          </div>
-          <div class="col-9">
-            <p class="common">{% trans 'У меня трое детей. И я их очень люблю' %}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="cv-main">
-      <div class="cv-section">
-        <h2 class="cv-h2">{% trans "Кратко" %}</h2>
-        <p class="common">
-          {{ cv.text }}
-        </p>
-      </div>
-      <div class="cv-section">
-        <h2 class="cv-h2">{% trans "Образование" %}</h2>
-        {% for uni in cv.education.all %}
-          <h3 class="cv-subheader">{{ uni.name }}</h3>
-          <p class="common"><b>{{ uni.degree }}</b></p>
+      <div class="col-8">
+        <div class="cv-header">
+          <h1 class="cv-h1">{% trans "Кромм Владимир" %}</h1>
+          <h3 class="cv-subheader">{{ cv.position }}</h3>
           <div class="cv-header-icon">
-            <i class="far fa-calendar-alt"></i>
-            <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>
+            <i class="far fa-envelope"></i>
+            <a href="mailto:wladimir@kromm.info">wladimir@kromm.info</a>
           </div>
-          <div class="common">{{ uni.description|safe }}</div>
-        {% endfor %}
-      </div>
-      <div class="cv-section">
-        <h2 class="cv-h2">{% trans "Опыт работы" %}</h2>
-        {% for job in cv.jobs.all %}
-          <h3 class="cv-subheader"><b>{{ job.name }}</b></h3>
-          <p class="common"><b>{{ job.position }}</b></p>
           <div class="cv-header-icon">
-            <i class="far fa-calendar-alt"></i>
-            <p class="common">{{ job.start_date|date:'M.Y' }} - {{ job.end_date|date:'M.Y' }}</p>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+79130073119">+7-913-007-3119</a>
           </div>
-          <div class="common">{{ job.description|safe }}</div>
-        {% endfor %}
-      </div>
-      <div class="cv-section">
-        <h2 class="cv-h2">{% trans "Мои проекты" %}</h2>
-        {% for project in cv.projects.all %}
-          <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>
-          <p class="common">{{ project.short_desc }}</p>
-          <p class="common"><b>Role: </b>{{ project.role }}</p>
           <div class="cv-header-icon">
-            <i class="far fa-calendar-alt"></i>
-            <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Berlin, DE</p>
           </div>
-          <div class="common">{{ project.description|safe }}</div>
-        {% endfor %}
+          <div class="cv-header-icon">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/vkromm/?locale=en_US">LinkedIn.com/in/vkromm/</a>
+          </div>
+          <div class="cv-header-icon">
+            <i class="fab fa-github-square"></i>
+            <a href="https://github.com/abi83">GitHub.com/abi83</a>
+          </div>
+        </div>
+        <div class="cv-section">
+          <h2 class="cv-h2">{% trans "Кратко" %}</h2>
+          <p class="common">
+            {{ cv.text }}
+          </p>
+        </div>
+        <div class="cv-section">
+          <h2 class="cv-h2">{% trans "Образование" %}</h2>
+          {% for uni in cv.education.all %}
+            <h3 class="cv-subheader">{{ uni.name }}</h3>
+            <p class="common"><b>{{ uni.degree }}</b></p>
+            <div class="cv-header-icon">
+              <i class="far fa-calendar-alt"></i>
+              <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>
+            </div>
+            <div class="common">{{ uni.description|safe }}</div>
+          {% endfor %}
+        </div>
+        <div class="cv-section">
+          <h2 class="cv-h2">{% trans "Опыт работы" %}</h2>
+          {% for job in cv.jobs.all %}
+            <h3 class="cv-subheader"><b>{{ job.name }}</b></h3>
+            <p class="common"><b>{{ job.position }}</b></p>
+            <div class="cv-header-icon">
+              <i class="far fa-calendar-alt"></i>
+              <p class="common">{{ job.start_date|date:'M.Y' }} - {{ job.end_date|date:'M.Y' }}</p>
+            </div>
+            <div class="common">{{ job.description|safe }}</div>
+          {% endfor %}
+        </div>
+        <div class="cv-section">
+          <h2 class="cv-h2">{% trans "Мои проекты" %}</h2>
+          <p class="common">
+            Here are some of my projects. More projects at https://kromm.info
+          </p>
+          {% for project in cv.projects.all %}
+            <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>
+            <p class="common">{{ project.short_desc }}</p>
+            <p class="common"><b>Role: </b>{{ project.role }}</p>
+            <div class="cv-header-icon">
+              <i class="far fa-calendar-alt"></i>
+              <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>
+            </div>
+            <div class="common">{{ project.description|safe }}</div>
+          {% endfor %}
+        </div>
       </div>
-    </section>
+    </div>
   </article>
   </div>
 {% endblock %}

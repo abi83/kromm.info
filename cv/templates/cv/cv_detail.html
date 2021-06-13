@@ -40,7 +40,7 @@
     <div class="row">
       <div class="col-4">
         <img src="{% static 'foto.png' %}" alt='Kromm Wladimir ' width="100%">
-        <div class="cv-section">
+        <div class="cv-section cv-unit">
           <link rel="preload" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
           <noscript><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"></noscript>
           <h2 class="cv-h2">{% trans "Скилы" %}</h2>
@@ -62,7 +62,7 @@
             <p class="common">{{ skill.description }}</p>
           {% endfor %}
         </div>
-        <div class="cv-section">
+        <div class="cv-section cv-unit">
           <h2 class="cv-h2">{% trans "Обо мне" %}</h2>
           <div class="row mb-4">
             <div class="col-3">
@@ -136,25 +136,29 @@
         <div class="cv-section">
           <h2 class="cv-h2">{% trans "Образование" %}</h2>
           {% for uni in cv.education.all %}
-            <h3 class="cv-subheader">{{ uni.name }}</h3>
-            <p class="common"><b>{{ uni.degree }}</b></p>
-            <div class="cv-header-icon">
-              <i class="far fa-calendar-alt"></i>
-              <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>
+            <div class="cv-unit">
+              <h3 class="cv-subheader">{{ uni.name }}</h3>
+              <p class="common"><b>{{ uni.degree }}</b></p>
+              <div class="cv-header-icon">
+                <i class="far fa-calendar-alt"></i>
+                <p class="common">{{ uni.start_date|date:'M.Y' }} - {{ uni.end_date|date:'M.Y' }}</p>
+              </div>
+              <div class="common">{{ uni.description|safe }}</div>
             </div>
-            <div class="common">{{ uni.description|safe }}</div>
           {% endfor %}
         </div>
         <div class="cv-section">
           <h2 class="cv-h2">{% trans "Опыт работы" %}</h2>
           {% for job in cv.jobs.all %}
-            <h3 class="cv-subheader"><b>{{ job.name }}</b></h3>
-            <p class="common"><b>{{ job.position }}</b></p>
-            <div class="cv-header-icon">
-              <i class="far fa-calendar-alt"></i>
-              <p class="common">{{ job.start_date|date:'M.Y' }} - {{ job.end_date|date:'M.Y' }}</p>
+            <div class="cv-unit">
+              <h3 class="cv-subheader"><b>{{ job.name }}</b></h3>
+              <p class="common"><b>{{ job.position }}</b></p>
+              <div class="cv-header-icon">
+                <i class="far fa-calendar-alt"></i>
+                <p class="common">{{ job.start_date|date:'M.Y' }} - {{ job.end_date|date:'M.Y' }}</p>
+              </div>
+              <div class="common">{{ job.description|safe }}</div>
             </div>
-            <div class="common">{{ job.description|safe }}</div>
           {% endfor %}
         </div>
         <div class="cv-section">
@@ -163,14 +167,16 @@
             Here are some of my projects. More projects at https://kromm.info
           </p>
           {% for project in cv.projects.all %}
-            <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>
-            <p class="common">{{ project.short_desc }}</p>
-            <p class="common"><b>Role: </b>{{ project.role }}</p>
-            <div class="cv-header-icon">
-              <i class="far fa-calendar-alt"></i>
-              <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>
+            <div class="cv-unit">
+              <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>
+              <p class="common">{{ project.short_desc }}</p>
+              <p class="common"><b>Role: </b>{{ project.role }}</p>
+              <div class="cv-header-icon">
+                <i class="far fa-calendar-alt"></i>
+                <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>
+              </div>
+              <div class="common">{{ project.description|safe }}</div>
             </div>
-            <div class="common">{{ project.description|safe }}</div>
           {% endfor %}
         </div>
       </div>

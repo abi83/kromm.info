@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-29 18:03+0700\n"
+"POT-Creation-Date: 2021-07-07 00:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,153 +18,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\cv\forms.py:17
-msgid "В телефоне должно быть от 7 до 12 цифр"
-msgstr "Die Telefonnummer muss zwischen 7 und 12 Ziffern liegen"
-
-#: .\cv\forms.py:21
-msgid "Имя"
-msgstr "Vorname"
-
-#: .\cv\forms.py:26
-msgid "Фамилия"
-msgstr "Nachname"
-
-#: .\cv\forms.py:35
-msgid "Введите корректный е-мейл"
-msgstr "Bitte geben Sie eine gültige Email-Adresse ein"
-
-#: .\cv\forms.py:41
-msgid "Телефон"
-msgstr "Telefonnummer"
-
-#: .\cv\forms.py:45
-msgid ""
-"От 7 до 25 знаков. Допускаются цифры, скобки (), пробелы и знаки + и -. "
-"Можно оставить пустым."
-msgstr ""
-"7 bis 25 Zeichen. Zahlen, Klammern (), Leerzeichen und Zeichen + und - sind "
-"zulässig. Kann leer gelassen werden."
-
-#: .\cv\forms.py:53
-msgid "Почтовый адрес"
-msgstr "Postanschrift"
-
-#: .\cv\forms.py:59
-msgid "Сообщение"
-msgstr "die Nachricht"
-
-#: .\cv\models.py:12 .\cv\models.py:23
-msgid "Учеба"
-msgstr "Kurs"
-
-#: .\cv\models.py:24
-msgid "Учебы"
-msgstr "Kurse"
-
-#: .\cv\models.py:31 .\cv\models.py:38
-msgid "Работа"
-msgstr "Job"
-
-#: .\cv\models.py:39
-msgid "Работы"
-msgstr "Arbeit"
-
-#: .\cv\models.py:47
-#, fuzzy
-#| msgid "Скилы"
-msgid "Скилл"
-msgstr "Kompetenzen"
-
-#: .\cv\models.py:48
-msgid "Уровень"
-msgstr "Niveau"
-
-#: .\cv\models.py:49
-msgid "Описание"
-msgstr "Beschreibung"
-
-#: .\cv\models.py:94
-msgid "URL слаг"
-msgstr "URL slug"
-
-#: .\cv\models.py:95
-msgid "Должность"
-msgstr "Position"
-
-#: .\cv\models.py:97 .\cv\templates\cv\cv_detail.html:143
-msgid "Опыт работы"
-msgstr "Berufserfahrung"
-
-#: .\cv\models.py:98 .\cv\templates\cv\cv_detail.html:131
-msgid "Образование"
-msgstr "Bildung"
-
-#: .\cv\models.py:99
-#, fuzzy
-#| msgid "Скилы"
-msgid "Скиллы"
-msgstr "Kompetenzen"
-
-#: .\cv\models.py:100 .\templates\index_page.html:237
-msgid "Мои проекты"
-msgstr "Meine Projekte"
-
-#: .\cv\templates\cv\cv_detail.html:41
+#: .\cv\templates\cv\cv_detail.html:56
 msgid "Кромм Владимир"
 msgstr "Kromm Wladimir"
 
-#: .\cv\templates\cv\cv_detail.html:68 .\templates\index_page.html:121
+#: .\cv\templates\cv\cv_detail.html:82 .\templates\index_page.html:121
 msgid "Скилы"
 msgstr "Kompetenzen"
 
-#: .\cv\templates\cv\cv_detail.html:88
+#: .\cv\templates\cv\cv_detail.html:96
 msgid "Обо мне"
 msgstr "Über mich"
 
-#: .\cv\templates\cv\cv_detail.html:94
+#: .\cv\templates\cv\cv_detail.html:102
 msgid "Люблю баскетбол и Евролигу"
 msgstr "Ich liebe Basketball und EuroLeague"
 
-#: .\cv\templates\cv\cv_detail.html:102
+#: .\cv\templates\cv\cv_detail.html:110
 msgid "Хорошо катаюсь на горных лыжах"
 msgstr "Ich kann gut Ski fahren"
 
-#: .\cv\templates\cv\cv_detail.html:110
-msgid "20 лет прожил в Сибири, поэтому не боюсь трудностей"
-msgstr "Ich habe 20 Jahre in Sibirien gelebt, deshalb habe ich keine Angst vor Schwierigkeiten"
-
 #: .\cv\templates\cv\cv_detail.html:118
-msgid "У меня трое детей. И я их очень люблю"
-msgstr "Ich habe drei Kinder. Und ich liebe sie sehr"
+msgid "20 лет прожил в Сибири, поэтому не боюсь трудностей"
+msgstr ""
+"Ich habe 20 Jahre in Sibirien gelebt, deshalb habe ich keine Angst vor "
+"Schwierigkeiten"
 
-#: .\cv\templates\cv\cv_detail.html:125
+#: .\cv\templates\cv\cv_detail.html:123
+msgid "Языки"
+msgstr "Sprachen"
+
+#: .\cv\templates\cv\cv_detail.html:129
+msgid "Английский: свободно"
+msgstr "Englisch: Fließend"
+
+#: .\cv\templates\cv\cv_detail.html:137
+msgid "Немецкий: базовый"
+msgstr "Grunddeutsch"
+
+#: .\cv\templates\cv\cv_detail.html:145
+msgid "Русский: родной"
+msgstr "Russisch: muttersprache"
+
+#: .\cv\templates\cv\cv_detail.html:152
 msgid "Кратко"
 msgstr "Profil"
 
-#: .\cv\views.py:18
-msgid "Сообщение не было отправлено. В форме есть ошибки."
-msgstr "Die Nachricht wurde nicht gesendet. Das Formular enthält Fehler."
+#: .\cv\templates\cv\cv_detail.html:158
+msgid "Образование"
+msgstr "Bildung"
 
-#: .\cv\views.py:52
-msgid ""
-"Сообщение не было отправлено. В <a href=\"#contact-form\"class=\"alert-link"
-"\">форме</a> есть ошибки."
-msgstr ""
-"Die Nachricht wurde nicht gesendet. Das <a href=\"#contact-form\"class="
-"\"alert-link\">Formular</a> enthält Fehler."
+#: .\cv\templates\cv\cv_detail.html:172
+msgid "Опыт работы"
+msgstr "Berufserfahrung"
 
-#: .\djanger\settings.py:149
-msgid "Russia"
-msgstr "Russland"
-
-#: .\djanger\settings.py:150
-msgid "English"
-msgstr "Englisch"
-
-#: .\djanger\settings.py:151
-msgid "Germanya"
-msgstr "Deutschland"
+#: .\cv\templates\cv\cv_detail.html:186 .\templates\index_page.html:237
+msgid "Мои проекты"
+msgstr "Meine Projekte"
 
 #: .\templates\form.html:84
 msgid "Отправить"
@@ -283,3 +193,87 @@ msgstr "Preise"
 #: .\templates\navbar.html:37
 msgid "Приложения"
 msgstr "Apps"
+
+#~ msgid "В телефоне должно быть от 7 до 12 цифр"
+#~ msgstr "Die Telefonnummer muss zwischen 7 und 12 Ziffern liegen"
+
+#~ msgid "Имя"
+#~ msgstr "Vorname"
+
+#~ msgid "Фамилия"
+#~ msgstr "Nachname"
+
+#~ msgid "Введите корректный е-мейл"
+#~ msgstr "Bitte geben Sie eine gültige Email-Adresse ein"
+
+#~ msgid "Телефон"
+#~ msgstr "Telefonnummer"
+
+#~ msgid ""
+#~ "От 7 до 25 знаков. Допускаются цифры, скобки (), пробелы и знаки + и -. "
+#~ "Можно оставить пустым."
+#~ msgstr ""
+#~ "7 bis 25 Zeichen. Zahlen, Klammern (), Leerzeichen und Zeichen + und - "
+#~ "sind zulässig. Kann leer gelassen werden."
+
+#~ msgid "Почтовый адрес"
+#~ msgstr "Postanschrift"
+
+#~ msgid "Сообщение"
+#~ msgstr "die Nachricht"
+
+#~ msgid "Учеба"
+#~ msgstr "Kurs"
+
+#~ msgid "Учебы"
+#~ msgstr "Kurse"
+
+#~ msgid "Работа"
+#~ msgstr "Job"
+
+#~ msgid "Работы"
+#~ msgstr "Arbeit"
+
+#, fuzzy
+#~| msgid "Скилы"
+#~ msgid "Скилл"
+#~ msgstr "Kompetenzen"
+
+#~ msgid "Уровень"
+#~ msgstr "Niveau"
+
+#~ msgid "Описание"
+#~ msgstr "Beschreibung"
+
+#~ msgid "URL слаг"
+#~ msgstr "URL slug"
+
+#~ msgid "Должность"
+#~ msgstr "Position"
+
+#, fuzzy
+#~| msgid "Скилы"
+#~ msgid "Скиллы"
+#~ msgstr "Kompetenzen"
+
+#~ msgid "У меня трое детей. И я их очень люблю"
+#~ msgstr "Ich habe drei Kinder. Und ich liebe sie sehr"
+
+#~ msgid "Сообщение не было отправлено. В форме есть ошибки."
+#~ msgstr "Die Nachricht wurde nicht gesendet. Das Formular enthält Fehler."
+
+#~ msgid ""
+#~ "Сообщение не было отправлено. В <a href=\"#contact-form\"class=\"alert-"
+#~ "link\">форме</a> есть ошибки."
+#~ msgstr ""
+#~ "Die Nachricht wurde nicht gesendet. Das <a href=\"#contact-form\"class="
+#~ "\"alert-link\">Formular</a> enthält Fehler."
+
+#~ msgid "Russia"
+#~ msgstr "Russland"
+
+#~ msgid "English"
+#~ msgstr "Englisch"
+
+#~ msgid "Germanya"
+#~ msgstr "Deutschland"

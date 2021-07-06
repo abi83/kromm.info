@@ -11,12 +11,12 @@
   <script src="{% static 'my/html2pdf.bundle.min.js' %}"></script>
 
   <!--
-  1. Убрать фото
-  2. Убрать про семью
+  +1. Убрать фото
+  +2. Убрать про семью
   3. Резюме - 1 страница
   4. Technical CV - 5 страниц
   5. Обо мне - переделать полностью, сократить
-  6. Звездочки - убрать
+  +6. Звездочки - убрать
   7. ИП -> Смарт Регион
   8. Проекты - по приоритету, стэк - в первую очередь, описывать ФУНКЦИИ
   9. Опыт - через инструменты и стэк
@@ -182,24 +182,24 @@
               </div>
             {% endfor %}
           </div>
-          <div class="cv-section">
-            <h2 class="cv-h2">{% trans "Мои проекты" %}</h2>
-            <p class="common">
-              Here are some of my projects. More projects at https://kromm.info
-            </p>
-            {% for project in cv.projects.all %}
-              <div class="cv-unit">
-                <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>
-                <p class="common">{{ project.short_desc }}</p>
-                <p class="common"><b>Role: </b>{{ project.role }}</p>
-                <div class="cv-header-icon">
-                  <i class="far fa-calendar-alt"></i>
-                  <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>
-                </div>
-                <div class="common">{{ project.description|safe }}</div>
-              </div>
-            {% endfor %}
-          </div>
+{#          <div class="cv-section">#}
+{#            <h2 class="cv-h2">{% trans "Мои проекты" %}</h2>#}
+{#            <p class="common">#}
+{#              Here are some of my projects. More projects at https://kromm.info#}
+{#            </p>#}
+{#            {% for project in cv.projects.all %}#}
+{#              <div class="cv-unit">#}
+{#                <h3 class="cv-subheader"><b>{{ project.title }}</b></h3>#}
+{#                <p class="common">{{ project.short_desc }}</p>#}
+{#                <p class="common"><b>Role: </b>{{ project.role }}</p>#}
+{#                <div class="cv-header-icon">#}
+{#                  <i class="far fa-calendar-alt"></i>#}
+{#                  <p class="common">{{ project.start_date|date:'M.Y' }} - {{ project.end_date|date:'M.Y' }}</p>#}
+{#                </div>#}
+{#                <div class="common">{{ project.description|safe }}</div>#}
+{#              </div>#}
+{#            {% endfor %}#}
+{#          </div>#}
         </div>
       </div>
     </article>

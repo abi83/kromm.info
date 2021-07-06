@@ -45,7 +45,7 @@ class Job(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(_('Скилл'), max_length=25)
-    rank = models.IntegerField(_('Уровень'), validators=[MinValueValidator(1), MaxValueValidator(5)])
+    rank = models.FloatField(_('Уровень'))
     description = models.CharField(_('Описание'), max_length=127)
 
     class Meta:

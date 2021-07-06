@@ -86,13 +86,7 @@
                   <p class="common"><b>{{ skill }}</b></p>
                 </div>
                 <div>
-                  {% for rank in '12345'|make_list %}
-                    {% if rank <= skill.rank|slugify %}
-                      <i class="fas fa-star"></i>
-                    {% else %}
-                      <i class="far fa-star"></i>
-                    {% endif %}
-                  {% endfor %}
+                  <p class="common">{{ skill.rank }} {% trans "года" %}</p>
                 </div>
               </div>
               <p class="common">{{ skill.description }}</p>

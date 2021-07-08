@@ -11,6 +11,9 @@ div.common p, li{
 b{
   font-weight: bold;
 }
+ul{
+  margin-bottom: 0;
+}
 .cv-wrapper{
   border: 1px inset black;
   max-width: 960px;
@@ -28,7 +31,7 @@ b{
 }
 .cv-section{
   /*margin-bottom: 2.0em;*/
-  padding: 1em 1em 0 1em;
+  padding: 1em 1em 0 0;
 }
 .cv-unit{
   break-inside: avoid;

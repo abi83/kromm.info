@@ -3,6 +3,9 @@
   text-align: justify;
   margin-bottom: 0;
 }
+.col-4{
+  padding-right: 0;
+}
 div.common p, li{
   font-size: 1em;
   text-align: justify;
@@ -31,7 +34,7 @@ ul{
 }
 .cv-section{
   /*margin-bottom: 2.0em;*/
-  padding: 1em 1em 0 0;
+  padding: 1em 1em 0 1em;
 }
 .cv-unit{
   break-inside: avoid;

@@ -33,7 +33,6 @@ ul{
   padding: 1em;
 }
 .cv-section{
-  /*margin-bottom: 2.0em;*/
   padding: 1em 1em 0 1em;
 }
 .cv-unit{
@@ -77,5 +76,8 @@ ul{
 @media print {
   header, footer{
     display: none;
+  }
+  body{
+    background-color: red;
   }
 }

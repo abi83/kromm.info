@@ -102,3 +102,17 @@ class CV(models.Model):
     def __str__(self):
         return self.position
 
+
+class Cover(models.Model):
+    """
+    Cover letter
+    """
+    active = models.BooleanField(default=True)
+    company = models.CharField('To company', max_length=255)
+    to = models.CharField('To person', default='Hiring Manager', max_length=255)
+    date = models.DateField()
+    position = models.CharField(max_length=125, null=True, blank=True)
+    description = HTMLField()
+
+    def __str__(self):
+        return f' to{self.company} at {self.position}'

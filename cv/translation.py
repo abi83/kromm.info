@@ -11,6 +11,7 @@ class StudyTranslationOptions(TranslationOptions):
 class JobTranslationOptions(TranslationOptions):
     fields = ('rank', )
 
+
 @register(Job)
 class JobTranslationOptions(TranslationOptions):
     fields = ('name', 'position', 'description', )

@@ -3,7 +3,7 @@ from modeltranslation.admin import (
     TranslationAdmin, TabbedTranslationAdmin, TranslationStackedInline, TranslationTabularInline)
 
 
-from .models import Study, Project, ProjectImage, CV, Skill, Job
+from .models import Study, Project, ProjectImage, CV, Skill, Job, Cover
 
 
 @admin.register(Study)
@@ -26,6 +26,11 @@ class ProjectAdmin(TabbedTranslationAdmin):
 
 @admin.register(CV)
 class CVAdmin(TabbedTranslationAdmin):
+    pass
+
+
+@admin.register(Cover)
+class CoverAdmin(admin.ModelAdmin):
     pass
 
 

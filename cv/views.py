@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic import ListView, DetailView
 
 from .forms import ContactForm
-from .models import Project, CV
+from .models import Project, CV, Cover
 
 
 def price_view(request):
@@ -102,3 +102,10 @@ class CVList(ListView):
 class TicTacToe(View):
     def get(self, request):
         return render(request, 'cv/tic_tac_toe.html', {})
+
+
+class CoverDetail(DetailView):
+    model = Cover
+    template_name = 'cv/cover.html'
+    context_object_name = 'cover'
+    queryset = Cover.objects.all()

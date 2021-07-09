@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% load thumbnail %}
+
+{% block content %}
+  <link rel="preload" href="{% static '/my/cv-detail.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!--html 2 pdf-->
+  <script src="{% static 'my/html2pdf.bundle.min.js' %}"></script>
+
+
+  <script type="text/javascript">
+    window.addEventListener("load", function () {
+      document.getElementById('download-button')
+        .addEventListener('click', async () => {
+          const cv = document.querySelector('.cv');
+          const options = {
+            margin: 0,
+            filename: 'Cover letter.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in',
+              format: 'a4',
+              orientation: 'portrait' }
+          };
+          await html2pdf()
+            .from(cv)
+            .set(options)
+            .save(options.filename, {returnPromise: true});
+          })
+    })
+  </script>
+
+  <button class="btn btn-primary" id="download-button">Download</button>
+  <div class="cv-wrapper">
+    <article class="cv">
+      <div class="row">
+        <div class="col-4">
+          <div class="cv-header p-3" style="height: 100%; min-height: 1300px;">
+            <h1 class="cv-h1">{% trans "Кромм Владимир" %}</h1>
+            <h3 class="cv-subheader">{{ cover.position }}</h3>
+            <div class="cv-header-icon">
+              <i class="far fa-envelope"></i>
+              <a href="mailto:wladimir@kromm.info">wladimir@kromm.info</a>
+            </div>
+            <div class="cv-header-icon">
+              <i class="fas fa-phone"></i>
+              <a href="tel:0176 7279 5665">0176-7279-5665</a>
+            </div>
+            <div class="cv-header-icon">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>14057, Berlin, Friedbergstr.5</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 p-1">
+          <div class="cv-section p-3">
+            <p class="common pb-5 pt-5">
+            {{ cover.date }}
+            </p>
+            <p class="common pb-5">{{ cover.company }}</p>
+            <p class="common pb-5">Dear {{ cover.to }},</p>
+            <div class="cv-unit common pb-5 mr-3">
+              {{ cover.description|safe }}
+            </div>
+            <p class="common pb-5">
+              Thank you for your time and consideration.
+            </p>
+            <p class="common">
+              Sincerely, Wladimir Kromm
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+{% endblock %}
